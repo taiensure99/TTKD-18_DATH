@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{10AEDE3B-954B-4252-8ED6-0ED8CE74C8C3}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{6AB87409-FADC-40BA-9382-19314DD52156}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Accidents1114.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Accidents1114.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Casualties1114.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Casualties1114.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -1103,679 +1103,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Source -&gt; Stage\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[pcd7]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pcd7"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd7]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[pcd8]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pcd8"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd8]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[pcds]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pcds"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcds]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[dointr]"
-                      cachedDataType="r8"
-                      cachedName="dointr"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[doterm]"
-                      cachedDataType="r8"
-                      cachedName="doterm"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[usertype]"
-                      cachedDataType="r8"
-                      cachedName="usertype"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[usertype]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[oa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="oa11cd"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[oa11cd]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[lsoa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="lsoa11cd"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11cd]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[msoa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="msoa11cd"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11cd]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[ladcd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ladcd"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladcd]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[lsoa11nm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="lsoa11nm"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11nm]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[msoa11nm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="msoa11nm"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11nm]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[ladnm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ladnm"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnm]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input].Columns[ladnmw]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ladnmw"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnmw]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd7]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd7]"
-                      name="Copy of pcd7"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd7]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd8]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd8]"
-                      name="Copy of pcd8"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd8]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcds]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcds]"
-                      name="Copy of pcds"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcds]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dointr]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dointr]"
-                      name="Copy of dointr"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of doterm]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of doterm]"
-                      name="Copy of doterm"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of usertype]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of usertype]"
-                      name="Copy of usertype"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[usertype]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of oa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of oa11cd]"
-                      name="Copy of oa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[oa11cd]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11cd]"
-                      name="Copy of lsoa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11cd]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11cd]"
-                      name="Copy of msoa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11cd]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladcd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladcd]"
-                      name="Copy of ladcd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladcd]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11nm]"
-                      name="Copy of lsoa11nm"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11nm]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11nm]"
-                      name="Copy of msoa11nm"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11nm]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnm]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnm]"
-                      name="Copy of ladnm"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnm]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnmw]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnmw]"
-                      name="Copy of ladnmw"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnmw]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Source -&gt; Stage\Data Conversion 1"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion 1"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Accident_Index]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Accident_Index"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Accident_Index]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Date]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Date"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Local_Authority_(Highway)]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Local_Authority_(Highway)"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Local_Authority_(Highway)]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[LSOA_of_Accident_Location]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="LSOA_of_Accident_Location"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[LSOA_of_Accident_Location]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]"
-                      name="Copy of Accident_Index"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Accident_Index]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Date]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Date]"
-                      name="Copy of Date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Date]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Local_Authority_(Highway)]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Local_Authority_(Highway)]"
-                      name="Copy of Local_Authority_(Highway)"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Local_Authority_(Highway)]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of LSOA_of_Accident_Location]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of LSOA_of_Accident_Location]"
-                      name="Copy of LSOA_of_Accident_Location"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[LSOA_of_Accident_Location]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Source -&gt; Stage\Data Conversion 2"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion 2"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Source -&gt; Stage\Data Conversion 2.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 2.Inputs[Data Conversion Input].Columns[Accident_Index]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Accident_Index"
-                      lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Accident_Index]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion 2.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]"
-                      name="Copy of Accident_Index"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Accident_Index]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Source -&gt; Stage\Data Conversion 2.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Source -&gt; Stage\PCD_OA"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2381,44 +1708,39 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Copy of Accident_Index]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of Accident_Index"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Copy of Local_Authority_(Highway)]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of Local_Authority_(Highway)"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(Highway)]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Local_Authority_(Highway)]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Copy of LSOA_of_Accident_Location]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of LSOA_of_Accident_Location"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of LSOA_of_Accident_Location]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Copy of Date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of Date"
+                      cachedName="Date"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Date]" />
+                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Local_Authority_(Highway)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Local_Authority_(Highway)"
+                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(Highway)]"
+                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Local_Authority_(Highway)]" />
+                    <inputColumn
+                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[LSOA_of_Accident_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LSOA_of_Accident_Location"
+                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
+                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[LSOA_of_Accident_Location]" />
+                    <inputColumn
+                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Accident_Index"
+                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Accident_Index]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="Accident_Index" />
                     <externalMetadataColumn
@@ -2455,8 +1777,7 @@
                       name="Number_of_Casualties" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="Date" />
                     <externalMetadataColumn
@@ -2473,8 +1794,7 @@
                       name="Local_Authority_(District)" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(Highway)]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="Local_Authority_(Highway)" />
                     <externalMetadataColumn
@@ -2547,8 +1867,7 @@
                       name="Did_Police_Officer_Attend_Scene_of_Accident" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="LSOA_of_Accident_Location" />
                   </externalMetadataColumns>
@@ -2595,7 +1914,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Casualties]</property>
+                  name="OpenRowset">[dbo].[Casualties]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2736,20 +2055,18 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
                       lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Home_Area_Type]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input].Columns[Copy of Accident_Index]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of Accident_Index"
+                      cachedName="Accident_Index"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Output].Columns[Copy of Accident_Index]" />
+                      lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Accident_Index]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="Accident_Index" />
                     <externalMetadataColumn
@@ -2852,7 +2169,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[PCD_OA]</property>
+                  name="OpenRowset">[dbo].[PCD_OA]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2909,130 +2226,116 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of pcd7]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of pcd7"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd7]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of pcd8]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of pcd8"
+                      cachedName="pcd8"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcd8]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd8]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of pcds]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[pcds]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of pcds"
+                      cachedName="pcds"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of pcds]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcds]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of dointr]"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[dointr]"
                       cachedDataType="r8"
-                      cachedName="Copy of dointr"
+                      cachedName="dointr"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of dointr]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of doterm]"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[doterm]"
                       cachedDataType="r8"
-                      cachedName="Copy of doterm"
+                      cachedName="doterm"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of doterm]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of usertype]"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[usertype]"
                       cachedDataType="r8"
-                      cachedName="Copy of usertype"
+                      cachedName="usertype"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of usertype]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[usertype]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of oa11cd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[oa11cd]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of oa11cd"
+                      cachedName="oa11cd"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of oa11cd]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[oa11cd]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of lsoa11cd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of lsoa11cd"
+                      cachedName="lsoa11cd"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11cd]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11cd]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of msoa11cd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[msoa11cd]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of msoa11cd"
+                      cachedName="msoa11cd"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11cd]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11cd]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of ladcd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[ladcd]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of ladcd"
+                      cachedName="ladcd"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladcd]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladcd]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of lsoa11nm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Copy of lsoa11nm"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[lsoa11nm]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="lsoa11nm"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of lsoa11nm]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[lsoa11nm]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of msoa11nm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[msoa11nm]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of msoa11nm"
+                      cachedName="msoa11nm"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of msoa11nm]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[msoa11nm]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of ladnm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[ladnm]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of ladnm"
+                      cachedName="ladnm"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnm]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnm]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[Copy of ladnmw]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[ladnmw]"
+                      cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Copy of ladnmw"
+                      cachedName="ladnmw"
                       externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladnmw]"
-                      lineageId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ladnmw]" />
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[ladnmw]" />
+                    <inputColumn
+                      refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].Columns[pcd7]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pcd7"
+                      externalMetadataColumnId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
+                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcd7]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="pcd7" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="pcd8" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="pcds" />
                     <externalMetadataColumn
@@ -3049,50 +2352,42 @@
                       name="usertype" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="oa11cd" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="lsoa11cd" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="msoa11cd" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="ladcd" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="lsoa11nm" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="msoa11nm" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="ladnm" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[ladnmw]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="wstr"
                       length="255"
                       name="ladnmw" />
                   </externalMetadataColumns>
@@ -3126,35 +2421,20 @@
           </components>
           <paths>
             <path
-              refId="Package\Source -&gt; Stage.Paths[Data Conversion Output]"
-              endId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Source -&gt; Stage\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Source -&gt; Stage.Paths[Data Conversion Output1]"
-              endId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Source -&gt; Stage\Data Conversion 1.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\Source -&gt; Stage.Paths[Data Conversion Output2]"
-              endId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input]"
-              name="Data Conversion Output"
-              startId="Package\Source -&gt; Stage\Data Conversion 2.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\Source -&gt; Stage.Paths[Excel Source Output]"
-              endId="Package\Source -&gt; Stage\Data Conversion.Inputs[Data Conversion Input]"
-              name="Excel Source Output"
-              startId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output]" />
-            <path
-              refId="Package\Source -&gt; Stage.Paths[Excel Source Output1]"
-              endId="Package\Source -&gt; Stage\Data Conversion 1.Inputs[Data Conversion Input]"
+              endId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
               startId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Source -&gt; Stage.Paths[Excel Source Output2]"
-              endId="Package\Source -&gt; Stage\Data Conversion 2.Inputs[Data Conversion Input]"
+              refId="Package\Source -&gt; Stage.Paths[Excel Source Output1]"
+              endId="Package\Source -&gt; Stage\State_casualties.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
               startId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Source -&gt; Stage.Paths[Excel Source Output2]"
+              endId="Package\Source -&gt; Stage\State_PCD_OA.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3173,7 +2453,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="158.666666666667,42"
+          Size="159,42"
           Id="Package\Source -&gt; Stage"
           TopLeft="214,80" />
       </GraphLayout>
@@ -3185,39 +2465,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\PCD_OA"
-          TopLeft="640.178561889168,51.9999990701676" />
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Source -&gt; Stage\State_casualties"
-          TopLeft="335.714280711753,187.000000000001" />
-        <NodeLayout
           Size="162,42"
           Id="Package\Source -&gt; Stage\Stage_Accidents"
-          TopLeft="70.3750009033829,187" />
+          TopLeft="3.3750009033829,187" />
         <NodeLayout
-          Size="149.333333333334,42.6666666666667"
+          Size="129,43"
+          Id="Package\Source -&gt; Stage\Casualities"
+          TopLeft="195.035708950567,29.8571421265603" />
+        <NodeLayout
+          Size="119,43"
+          Id="Package\Source -&gt; Stage\PCD_OA"
+          TopLeft="379.178561889168,33.9999990701676" />
+        <NodeLayout
+          Size="149,43"
           Id="Package\Source -&gt; Stage\State_PCD_OA"
-          TopLeft="627.678562075432,264.642852410674" />
+          TopLeft="365.678562075432,187.642852410674" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Data Conversion"
-          TopLeft="625.892847816327,155.071425798535" />
+          Size="156,43"
+          Id="Package\Source -&gt; Stage\State_casualties"
+          TopLeft="188.714280711753,193.000000000001" />
+        <NodeLayout
+          Size="124,43"
+          Id="Package\Source -&gt; Stage\Accidents"
+          TopLeft="24.9642843439111,38.7142849504948" />
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output]"
-          TopLeft="702.035704852748,94.6666657368343">
+          TopLeft="85.669642623647,81.7142849504948">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.4047600617007"
+              EndConnector="0,105.285715049505"
               Start="0,0"
-              End="0,52.9047600617007">
+              End="0,97.7857150495052">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.9047600617007" />
+                    End="0,97.7857150495052" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3226,50 +2510,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Data Conversion Output]"
-          TopLeft="703.452371612546,197.738092465202">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.9047599454722"
-              Start="0,0"
-              End="0,59.4047599454722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.4047599454722" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="124,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Accidents"
-          TopLeft="91.9642843439111,42.7142849504948" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Data Conversion 1"
-          TopLeft="68.7499989755452,112.357140848041" />
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output1]"
-          TopLeft="153.023808326395,85.3809516171615">
+          TopLeft="263.12499483116,72.8571421265603">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.9761892308792"
+              EndConnector="0,120.142857873441"
               Start="0,0"
-              End="0,19.4761892308792">
+              End="0,112.642857873441">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4761892308792" />
+                    End="0,112.642857873441" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3278,72 +2532,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Data Conversion Output1]"
-          TopLeft="151.729166606131,155.023807514707">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.9761924852927"
-              Start="0,0"
-              End="0,24.4761924852927">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4761924852927" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Casualities"
-          TopLeft="358.035708950567,40.8571421265603" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Data Conversion 2"
-          TopLeft="336.607137841306,115.142855083942" />
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output2]"
-          TopLeft="421.321423395936,83.5238087932269">
+          TopLeft="439.4285619823,76.9999990701676">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.6190462907156"
+              EndConnector="0,110.642853340506"
               Start="0,0"
-              End="0,24.1190462907156">
+              End="0,103.142853340506">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.1190462907156" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Data Conversion Output2]"
-          TopLeft="416.827375943196,157.809521750609">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.1904782493916"
-              Start="0,0"
-              End="0,21.6904782493916">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.6904782493916" />
+                    End="0,103.142853340506" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3356,33 +2558,33 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\PCD_OA">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\State_casualties">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Source -&gt; Stage\Stage_Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Casualities">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\PCD_OA">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3408,7 +2610,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Accidents">
+    design-time-name="Package\Source -&gt; Stage\State_casualties">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3421,7 +2623,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Casualities">
+    design-time-name="Package\Source -&gt; Stage\Accidents">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
