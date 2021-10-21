@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DATH02</Name>
-    <LastWriteTime>2021-10-18T15:11:23.0592935Z</LastWriteTime>
+    <LastWriteTime>2021-10-21T14:03:25.6412655Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2021-10-18T15:11:22.9765142Z</LastWriteTime>
+      <Name>LoadSourceToStage.dtsx</Name>
+      <LastWriteTime>2021-10-21T14:32:38.6689157Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
