@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{D76006C1-0E8F-4C86-91B1-3FE50A9E789F}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{822AA674-FF4A-47B2-8CCE-BF0C279AF92E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -73,7 +73,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\postcodes.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\postcodes.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -85,7 +85,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Vehicles1114.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Vehicles1114.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -205,15 +205,6 @@
                       name="Latitude"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Police_Force]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Police_Force]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Police_Force]"
-                      name="Police_Force"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Accident_Severity]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -288,24 +279,6 @@
                       name="Local_Authority_(Highway)"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Class]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[1st_Road_Class]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Class]"
-                      name="1st_Road_Class"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Number]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[1st_Road_Number]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Number]"
-                      name="1st_Road_Number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Road_Type]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -322,60 +295,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Speed_limit]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Speed_limit]"
                       name="Speed_limit"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Detail]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Junction_Detail]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Detail]"
-                      name="Junction_Detail"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Control]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Junction_Control]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Control]"
-                      name="Junction_Control"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Class]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[2nd_Road_Class]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Class]"
-                      name="2nd_Road_Class"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Number]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[2nd_Road_Number]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Number]"
-                      name="2nd_Road_Number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Human_Control]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Pedestrian_Crossing-Human_Control]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Human_Control]"
-                      name="Pedestrian_Crossing-Human_Control"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Pedestrian_Crossing-Physical_Facilities]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
-                      name="Pedestrian_Crossing-Physical_Facilities"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Light_Conditions]"
@@ -430,15 +349,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Urban_or_Rural_Area]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Urban_or_Rural_Area]"
                       name="Urban_or_Rural_Area"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      name="Did_Police_Officer_Attend_Scene_of_Accident"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[LSOA_of_Accident_Location]"
@@ -619,11 +529,6 @@
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Latitude]"
                       name="Latitude" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Police_Force]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Police_Force]"
-                      name="Police_Force" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Accident_Severity]"
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Accident_Severity]"
@@ -666,16 +571,6 @@
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Local_Authority_(Highway)]"
                       name="Local_Authority_(Highway)" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[1st_Road_Class]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[1st_Road_Class]"
-                      name="1st_Road_Class" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[1st_Road_Number]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[1st_Road_Number]"
-                      name="1st_Road_Number" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Road_Type]"
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Road_Type]"
@@ -685,36 +580,6 @@
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Speed_limit]"
                       name="Speed_limit" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Junction_Detail]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Junction_Detail]"
-                      name="Junction_Detail" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Junction_Control]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Junction_Control]"
-                      name="Junction_Control" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[2nd_Road_Class]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[2nd_Road_Class]"
-                      name="2nd_Road_Class" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[2nd_Road_Number]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[2nd_Road_Number]"
-                      name="2nd_Road_Number" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Pedestrian_Crossing-Human_Control]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Pedestrian_Crossing-Human_Control]"
-                      name="Pedestrian_Crossing-Human_Control" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Pedestrian_Crossing-Physical_Facilities]"
-                      name="Pedestrian_Crossing-Physical_Facilities" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Light_Conditions]"
                       dataType="r8"
@@ -745,11 +610,6 @@
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Urban_or_Rural_Area]"
                       name="Urban_or_Rural_Area" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      name="Did_Police_Officer_Attend_Scene_of_Accident" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Error Output].Columns[LSOA_of_Accident_Location]"
                       dataType="wstr"
@@ -953,15 +813,6 @@
                       lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Type]"
                       name="Casualty_Type"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Home_Area_Type]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].ExternalColumns[Casualty_Home_Area_Type]"
-                      lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Home_Area_Type]"
-                      name="Casualty_Home_Area_Type"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1105,11 +956,6 @@
                       lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Error Output].Columns[Casualty_Type]"
                       name="Casualty_Type" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Error Output].Columns[Casualty_Home_Area_Type]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Error Output].Columns[Casualty_Home_Area_Type]"
-                      name="Casualty_Home_Area_Type" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Error Output].Columns[ErrorCode]"
@@ -1208,24 +1054,6 @@
                       length="255"
                       lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcds]"
                       name="pcds"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].ExternalColumns[dointr]"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]"
-                      name="dointr"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].ExternalColumns[doterm]"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]"
-                      name="doterm"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[usertype]"
@@ -1412,16 +1240,6 @@
                       lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[pcds]"
                       name="pcds" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[dointr]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[dointr]"
-                      name="dointr" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[doterm]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[doterm]"
-                      name="doterm" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[usertype]"
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Error Output].Columns[usertype]"
@@ -1507,7 +1325,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">postcodes#xlsx$</property>
+                  name="OpenRowset">postcodes$</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1827,7 +1645,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Accidents]</property>
+                  name="OpenRowset">[Accidents]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1908,12 +1726,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Latitude]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Police_Force]"
-                      cachedDataType="r8"
-                      cachedName="Police_Force"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Police_Force]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Police_Force]" />
-                    <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Accident_Severity]"
                       cachedDataType="r8"
                       cachedName="Accident_Severity"
@@ -1950,18 +1762,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(District)]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Local_Authority_(District)]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[1st_Road_Class]"
-                      cachedDataType="r8"
-                      cachedName="1st_Road_Class"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Class]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Class]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[1st_Road_Number]"
-                      cachedDataType="r8"
-                      cachedName="1st_Road_Number"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Number]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[1st_Road_Number]" />
-                    <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Road_Type]"
                       cachedDataType="r8"
                       cachedName="Road_Type"
@@ -1973,42 +1773,6 @@
                       cachedName="Speed_limit"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Speed_limit]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Speed_limit]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Junction_Detail]"
-                      cachedDataType="r8"
-                      cachedName="Junction_Detail"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Detail]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Detail]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Junction_Control]"
-                      cachedDataType="r8"
-                      cachedName="Junction_Control"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Control]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Junction_Control]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[2nd_Road_Class]"
-                      cachedDataType="r8"
-                      cachedName="2nd_Road_Class"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Class]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Class]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[2nd_Road_Number]"
-                      cachedDataType="r8"
-                      cachedName="2nd_Road_Number"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Number]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[2nd_Road_Number]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Pedestrian_Crossing-Human_Control]"
-                      cachedDataType="r8"
-                      cachedName="Pedestrian_Crossing-Human_Control"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Human_Control]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Human_Control]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Pedestrian_Crossing-Physical_Facilities]"
-                      cachedDataType="r8"
-                      cachedName="Pedestrian_Crossing-Physical_Facilities"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Physical_Facilities]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Pedestrian_Crossing-Physical_Facilities]" />
                     <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Light_Conditions]"
                       cachedDataType="r8"
@@ -2045,12 +1809,6 @@
                       cachedName="Urban_or_Rural_Area"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
                       lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Urban_or_Rural_Area]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      cachedDataType="r8"
-                      cachedName="Did_Police_Officer_Attend_Scene_of_Accident"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      lineageId="Package\Source -&gt; Stage\Accidents.Outputs[Excel Source Output].Columns[Did_Police_Officer_Attend_Scene_of_Accident]" />
                     <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].Columns[Date]"
                       cachedDataType="wstr"
@@ -2104,10 +1862,6 @@
                       dataType="r8"
                       name="Latitude" />
                     <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Police_Force]"
-                      dataType="r8"
-                      name="Police_Force" />
-                    <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity]"
                       dataType="r8"
                       name="Accident_Severity" />
@@ -2142,14 +1896,6 @@
                       length="255"
                       name="Local_Authority_(Highway)" />
                     <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Class]"
-                      dataType="r8"
-                      name="1st_Road_Class" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[1st_Road_Number]"
-                      dataType="r8"
-                      name="1st_Road_Number" />
-                    <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type]"
                       dataType="r8"
                       name="Road_Type" />
@@ -2157,30 +1903,6 @@
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Speed_limit]"
                       dataType="r8"
                       name="Speed_limit" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Detail]"
-                      dataType="r8"
-                      name="Junction_Detail" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Control]"
-                      dataType="r8"
-                      name="Junction_Control" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Class]"
-                      dataType="r8"
-                      name="2nd_Road_Class" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[2nd_Road_Number]"
-                      dataType="r8"
-                      name="2nd_Road_Number" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Human_Control]"
-                      dataType="r8"
-                      name="Pedestrian_Crossing-Human_Control" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Pedestrian_Crossing-Physical_Facilities]"
-                      dataType="r8"
-                      name="Pedestrian_Crossing-Physical_Facilities" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions]"
                       dataType="r8"
@@ -2205,10 +1927,6 @@
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
                       dataType="r8"
                       name="Urban_or_Rural_Area" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[Did_Police_Officer_Attend_Scene_of_Accident]"
-                      dataType="r8"
-                      name="Did_Police_Officer_Attend_Scene_of_Accident" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Accidents.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
                       dataType="wstr"
@@ -2258,7 +1976,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Casualties]</property>
+                  name="OpenRowset">[Casualties]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2393,12 +2111,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
                       lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Type]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].Columns[Casualty_Home_Area_Type]"
-                      cachedDataType="r8"
-                      cachedName="Casualty_Home_Area_Type"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
-                      lineageId="Package\Source -&gt; Stage\Casualities.Outputs[Excel Source Output].Columns[Casualty_Home_Area_Type]" />
-                    <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -2465,10 +2177,6 @@
                       refId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Type]"
                       dataType="r8"
                       name="Casualty_Type" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_casualties.Inputs[OLE DB Destination Input].ExternalColumns[Casualty_Home_Area_Type]"
-                      dataType="r8"
-                      name="Casualty_Home_Area_Type" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2513,7 +2221,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[PCD_OA]</property>
+                  name="OpenRowset">[PCD_OA]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2583,18 +2291,6 @@
                       cachedName="pcds"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
                       lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[pcds]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].Columns[dointr]"
-                      cachedDataType="r8"
-                      cachedName="dointr"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[dointr]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].Columns[doterm]"
-                      cachedDataType="r8"
-                      cachedName="doterm"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
-                      lineageId="Package\Source -&gt; Stage\PCD_OA.Outputs[Excel Source Output].Columns[doterm]" />
                     <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].Columns[usertype]"
                       cachedDataType="r8"
@@ -2683,14 +2379,6 @@
                       length="255"
                       name="pcds" />
                     <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[dointr]"
-                      dataType="r8"
-                      name="dointr" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[doterm]"
-                      dataType="r8"
-                      name="doterm" />
-                    <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_PCD_OA.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
                       dataType="r8"
                       name="usertype" />
@@ -2778,7 +2466,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Postcodes]</property>
+                  name="OpenRowset">[Postcodes]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3017,7 +2705,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Vehicles]</property>
+                  name="OpenRowset">[dbo].[Vehicle]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3093,12 +2781,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Vehicle_Type]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Towing_and_Articulation]"
-                      cachedDataType="r8"
-                      cachedName="Towing_and_Articulation"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Towing_and_Articulation]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Towing_and_Articulation]" />
-                    <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Vehicle_Manoeuvre]"
                       cachedDataType="r8"
                       cachedName="Vehicle_Manoeuvre"
@@ -3116,30 +2798,6 @@
                       cachedName="Junction_Location"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Junction_Location]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Skidding_and_Overturning]"
-                      cachedDataType="r8"
-                      cachedName="Skidding_and_Overturning"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Skidding_and_Overturning]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Skidding_and_Overturning]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Hit_Object_in_Carriageway]"
-                      cachedDataType="r8"
-                      cachedName="Hit_Object_in_Carriageway"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_in_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_in_Carriageway]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Vehicle_Leaving_Carriageway]"
-                      cachedDataType="r8"
-                      cachedName="Vehicle_Leaving_Carriageway"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Leaving_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Vehicle_Leaving_Carriageway]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Hit_Object_off_Carriageway]"
-                      cachedDataType="r8"
-                      cachedName="Hit_Object_off_Carriageway"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_off_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_off_Carriageway]" />
                     <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[1st_Point_of_Impact]"
                       cachedDataType="r8"
@@ -3183,29 +2841,11 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Engine_Capacity_(CC)]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Engine_Capacity_(CC)]" />
                     <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Propulsion_Code]"
-                      cachedDataType="r8"
-                      cachedName="Propulsion_Code"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Propulsion_Code]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Propulsion_Code]" />
-                    <inputColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Age_of_Vehicle]"
                       cachedDataType="r8"
                       cachedName="Age_of_Vehicle"
                       externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Age_of_Vehicle]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Driver_IMD_Decile]"
-                      cachedDataType="r8"
-                      cachedName="Driver_IMD_Decile"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Driver_IMD_Decile]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_IMD_Decile]" />
-                    <inputColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].Columns[Driver_Home_Area_Type]"
-                      cachedDataType="r8"
-                      cachedName="Driver_Home_Area_Type"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Home_Area_Type]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_Home_Area_Type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3223,10 +2863,6 @@
                       dataType="r8"
                       name="Vehicle_Type" />
                     <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Towing_and_Articulation]"
-                      dataType="r8"
-                      name="Towing_and_Articulation" />
-                    <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Manoeuvre]"
                       dataType="r8"
                       name="Vehicle_Manoeuvre" />
@@ -3238,22 +2874,6 @@
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
                       dataType="r8"
                       name="Junction_Location" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Skidding_and_Overturning]"
-                      dataType="r8"
-                      name="Skidding_and_Overturning" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_in_Carriageway]"
-                      dataType="r8"
-                      name="Hit_Object_in_Carriageway" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Leaving_Carriageway]"
-                      dataType="r8"
-                      name="Vehicle_Leaving_Carriageway" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_off_Carriageway]"
-                      dataType="r8"
-                      name="Hit_Object_off_Carriageway" />
                     <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
                       dataType="r8"
@@ -3283,21 +2903,9 @@
                       dataType="r8"
                       name="Engine_Capacity_(CC)" />
                     <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Propulsion_Code]"
-                      dataType="r8"
-                      name="Propulsion_Code" />
-                    <externalMetadataColumn
                       refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
                       dataType="r8"
                       name="Age_of_Vehicle" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Driver_IMD_Decile]"
-                      dataType="r8"
-                      name="Driver_IMD_Decile" />
-                    <externalMetadataColumn
-                      refId="Package\Source -&gt; Stage\Stage_Vehicles.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Home_Area_Type]"
-                      dataType="r8"
-                      name="Driver_Home_Area_Type" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3408,15 +3016,6 @@
                       name="Vehicle_Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Towing_and_Articulation]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Towing_and_Articulation]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Towing_and_Articulation]"
-                      name="Towing_and_Articulation"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Vehicle_Manoeuvre]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -3442,42 +3041,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Junction_Location]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Junction_Location]"
                       name="Junction_Location"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Skidding_and_Overturning]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Skidding_and_Overturning]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Skidding_and_Overturning]"
-                      name="Skidding_and_Overturning"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_in_Carriageway]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Hit_Object_in_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_in_Carriageway]"
-                      name="Hit_Object_in_Carriageway"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Vehicle_Leaving_Carriageway]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Vehicle_Leaving_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Vehicle_Leaving_Carriageway]"
-                      name="Vehicle_Leaving_Carriageway"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_off_Carriageway]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Hit_Object_off_Carriageway]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Hit_Object_off_Carriageway]"
-                      name="Hit_Object_off_Carriageway"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[1st_Point_of_Impact]"
@@ -3543,15 +3106,6 @@
                       name="Engine_Capacity_(CC)"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Propulsion_Code]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Propulsion_Code]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Propulsion_Code]"
-                      name="Propulsion_Code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Age_of_Vehicle]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -3559,24 +3113,6 @@
                       externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Age_of_Vehicle]"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Age_of_Vehicle]"
                       name="Age_of_Vehicle"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_IMD_Decile]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Driver_IMD_Decile]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_IMD_Decile]"
-                      name="Driver_IMD_Decile"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_Home_Area_Type]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].ExternalColumns[Driver_Home_Area_Type]"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Output].Columns[Driver_Home_Area_Type]"
-                      name="Driver_Home_Area_Type"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -3694,11 +3230,6 @@
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Vehicle_Type]"
                       name="Vehicle_Type" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Towing_and_Articulation]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Towing_and_Articulation]"
-                      name="Towing_and_Articulation" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Vehicle_Manoeuvre]"
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Vehicle_Manoeuvre]"
@@ -3713,26 +3244,6 @@
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Junction_Location]"
                       name="Junction_Location" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Skidding_and_Overturning]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Skidding_and_Overturning]"
-                      name="Skidding_and_Overturning" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Hit_Object_in_Carriageway]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Hit_Object_in_Carriageway]"
-                      name="Hit_Object_in_Carriageway" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Vehicle_Leaving_Carriageway]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Vehicle_Leaving_Carriageway]"
-                      name="Vehicle_Leaving_Carriageway" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Hit_Object_off_Carriageway]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Hit_Object_off_Carriageway]"
-                      name="Hit_Object_off_Carriageway" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[1st_Point_of_Impact]"
                       dataType="r8"
@@ -3769,25 +3280,10 @@
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Engine_Capacity_(CC)]"
                       name="Engine_Capacity_(CC)" />
                     <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Propulsion_Code]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Propulsion_Code]"
-                      name="Propulsion_Code" />
-                    <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Age_of_Vehicle]"
                       dataType="r8"
                       lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Age_of_Vehicle]"
                       name="Age_of_Vehicle" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Driver_IMD_Decile]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Driver_IMD_Decile]"
-                      name="Driver_IMD_Decile" />
-                    <outputColumn
-                      refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Driver_Home_Area_Type]"
-                      dataType="r8"
-                      lineageId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[Driver_Home_Area_Type]"
-                      name="Driver_Home_Area_Type" />
                     <outputColumn
                       refId="Package\Source -&gt; Stage\Vehicles.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3850,7 +3346,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="158.666666666667,42"
+          Size="159,42"
           Id="Package\Source -&gt; Stage"
           TopLeft="214,80" />
       </GraphLayout>
@@ -3862,43 +3358,59 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.666666666667,42.6666666666667"
+          Size="119,43"
           Id="Package\Source -&gt; Stage\PCD_OA"
-          TopLeft="379.178561889168,33.9999990701676" />
+          TopLeft="371.178561889168,29.9999990701676" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="157,43"
+          Id="Package\Source -&gt; Stage\Stage_casualties"
+          TopLeft="181.714280711753,183.000000000001" />
+        <NodeLayout
+          Size="151,43"
+          Id="Package\Source -&gt; Stage\Stage_Vehicles"
+          TopLeft="694.041657809789,181.149996850193" />
+        <NodeLayout
+          Size="152,43"
           Id="Package\Source -&gt; Stage\Stage_PCD_OA"
-          TopLeft="365.678562075432,187.642852410674" />
+          TopLeft="356.678562075432,180.642852410674" />
         <NodeLayout
-          Size="129.333333333334,42.6666666666667"
+          Size="129,43"
           Id="Package\Source -&gt; Stage\Casualities"
           TopLeft="195.035708950567,29.8571421265603" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_casualties"
-          TopLeft="188.714280711753,193.000000000001" />
+          Size="117,43"
+          Id="Package\Source -&gt; Stage\Vehicles"
+          TopLeft="711.333323126038,36.6999993258715" />
+        <NodeLayout
+          Size="159,43"
+          Id="Package\Source -&gt; Stage\Stage_postcodes"
+          TopLeft="523.70832581756,180.599996699095" />
+        <NodeLayout
+          Size="127,43"
+          Id="Package\Source -&gt; Stage\Postcodes"
+          TopLeft="540.999991357327,38.0499993374944" />
+        <NodeLayout
+          Size="124,43"
+          Id="Package\Source -&gt; Stage\Accidents"
+          TopLeft="28.9642843439111,27.7142849504948" />
         <NodeLayout
           Size="162,42"
           Id="Package\Source -&gt; Stage\Stage_Accidents"
           TopLeft="3.3750009033829,187" />
-        <NodeLayout
-          Size="124,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Accidents"
-          TopLeft="24.9642843439111,38.7142849504948" />
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output1]"
-          TopLeft="263.541661497827,72.523808793227">
+          TopLeft="259.87499483116,72.8571421265603">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,120.476191206774"
+              EndConnector="0,110.142857873441"
               Start="0,0"
-              End="0,112.976191206774">
+              End="0,102.642857873441">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,112.976191206774" />
+                    End="0,102.642857873441" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3909,18 +3421,62 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output]"
-          TopLeft="85.669642623647,81.7142849504948">
+          TopLeft="87.669642623647,70.7142849504948">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,105.285715049505"
+              EndConnector="0,116.285715049505"
               Start="0,0"
-              End="0,97.7857150495052">
+              End="0,108.785715049505">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,97.7857150495052" />
+                    End="0,108.785715049505" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source -&gt; Stage.Paths[Excel Source Output4]"
+          TopLeft="769.687490467913,79.6999993258715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101.449997524321"
+              Start="0,0"
+              End="0,93.9499975243215">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.9499975243215" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source -&gt; Stage.Paths[Excel Source Output3]"
+          TopLeft="603.854158587443,81.0499993374944">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.5499973616006"
+              Start="0,0"
+              End="0,92.0499973616006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.0499973616006" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3931,78 +3487,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output2]"
-          TopLeft="440.095228648967,76.6666657368343">
+          TopLeft="431.6785619823,72.9999990701676">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,110.97618667384"
+              EndConnector="0,107.642853340506"
               Start="0,0"
-              End="0,103.47618667384">
+              End="0,100.142853340506">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,103.47618667384" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Postcodes"
-          TopLeft="579.999991357327,37.0499993374944" />
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_postcodes"
-          TopLeft="559.70832581756,184.599996699095" />
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Excel Source Output3]"
-          TopLeft="641.187491920777,79.7166660041611">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,104.883330694934"
-              Start="0,0"
-              End="0,97.3833306949337">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,97.3833306949337" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="117.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Vehicles"
-          TopLeft="768.333323126038,37.6999993258715" />
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_Vehicles"
-          TopLeft="749.041657809789,176.149996850193" />
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Excel Source Output4]"
-          TopLeft="825.687490467913,80.3666659925382">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,95.7833308576544"
-              Start="0,0"
-              End="0,88.2833308576544">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,88.2833308576544" />
+                    End="0,100.142853340506" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4016,6 +3512,32 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Source -&gt; Stage\PCD_OA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_casualties">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_Vehicles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4054,46 +3576,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_casualties">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_Accidents">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Accidents">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Postcodes">
+    design-time-name="Package\Source -&gt; Stage\Vehicles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4119,7 +3602,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Vehicles">
+    design-time-name="Package\Source -&gt; Stage\Postcodes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4132,7 +3615,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_Vehicles">
+    design-time-name="Package\Source -&gt; Stage\Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_Accidents">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

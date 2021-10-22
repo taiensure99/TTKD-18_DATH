@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{D76006C1-0E8F-4C86-91B1-3FE50A9E789F}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{242144B5-81BF-4F10-9C75-7FFF40F30632}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1507,7 +1507,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">postcodes#xlsx$</property>
+                  name="OpenRowset">postcodes$</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1827,7 +1827,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Accidents]</property>
+                  name="OpenRowset">[Accidents]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2258,7 +2258,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Casualties]</property>
+                  name="OpenRowset">[Casualties]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2513,7 +2513,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[PCD_OA]</property>
+                  name="OpenRowset">[PCD_OA]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2778,7 +2778,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Postcodes]</property>
+                  name="OpenRowset">[Postcodes]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3850,7 +3850,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="158.666666666667,42"
+          Size="159,42"
           Id="Package\Source -&gt; Stage"
           TopLeft="214,80" />
       </GraphLayout>
@@ -3862,43 +3862,59 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.666666666667,42.6666666666667"
+          Size="119,43"
           Id="Package\Source -&gt; Stage\PCD_OA"
-          TopLeft="379.178561889168,33.9999990701676" />
+          TopLeft="371.178561889168,29.9999990701676" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="157,43"
+          Id="Package\Source -&gt; Stage\Stage_casualties"
+          TopLeft="181.714280711753,183.000000000001" />
+        <NodeLayout
+          Size="151,43"
+          Id="Package\Source -&gt; Stage\Stage_Vehicles"
+          TopLeft="722.041657809789,178.149996850193" />
+        <NodeLayout
+          Size="152,43"
           Id="Package\Source -&gt; Stage\Stage_PCD_OA"
-          TopLeft="365.678562075432,187.642852410674" />
+          TopLeft="356.678562075432,180.642852410674" />
         <NodeLayout
-          Size="129.333333333334,42.6666666666667"
+          Size="129,43"
           Id="Package\Source -&gt; Stage\Casualities"
           TopLeft="195.035708950567,29.8571421265603" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_casualties"
-          TopLeft="188.714280711753,193.000000000001" />
+          Size="117,43"
+          Id="Package\Source -&gt; Stage\Vehicles"
+          TopLeft="745.333323126038,35.6999993258715" />
+        <NodeLayout
+          Size="159,43"
+          Id="Package\Source -&gt; Stage\Stage_postcodes"
+          TopLeft="523.70832581756,180.599996699095" />
+        <NodeLayout
+          Size="127,43"
+          Id="Package\Source -&gt; Stage\Postcodes"
+          TopLeft="540.999991357327,38.0499993374944" />
+        <NodeLayout
+          Size="124,43"
+          Id="Package\Source -&gt; Stage\Accidents"
+          TopLeft="28.9642843439111,27.7142849504948" />
         <NodeLayout
           Size="162,42"
           Id="Package\Source -&gt; Stage\Stage_Accidents"
           TopLeft="3.3750009033829,187" />
-        <NodeLayout
-          Size="124,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Accidents"
-          TopLeft="24.9642843439111,38.7142849504948" />
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output1]"
-          TopLeft="263.541661497827,72.523808793227">
+          TopLeft="259.87499483116,72.8571421265603">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,120.476191206774"
+              EndConnector="0,110.142857873441"
               Start="0,0"
-              End="0,112.976191206774">
+              End="0,102.642857873441">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,112.976191206774" />
+                    End="0,102.642857873441" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3909,18 +3925,62 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output]"
-          TopLeft="85.669642623647,81.7142849504948">
+          TopLeft="87.669642623647,70.7142849504948">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,105.285715049505"
+              EndConnector="0,116.285715049505"
               Start="0,0"
-              End="0,97.7857150495052">
+              End="0,108.785715049505">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,97.7857150495052" />
+                    End="0,108.785715049505" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source -&gt; Stage.Paths[Excel Source Output4]"
+          TopLeft="800.687490467913,78.6999993258715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.4499975243215"
+              Start="0,0"
+              End="0,91.9499975243215">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.9499975243215" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Source -&gt; Stage.Paths[Excel Source Output3]"
+          TopLeft="603.854158587443,81.0499993374944">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.5499973616006"
+              Start="0,0"
+              End="0,92.0499973616006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92.0499973616006" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3931,78 +3991,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Source -&gt; Stage.Paths[Excel Source Output2]"
-          TopLeft="440.095228648967,76.6666657368343">
+          TopLeft="431.6785619823,72.9999990701676">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,110.97618667384"
+              EndConnector="0,107.642853340506"
               Start="0,0"
-              End="0,103.47618667384">
+              End="0,100.142853340506">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,103.47618667384" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Postcodes"
-          TopLeft="579.999991357327,37.0499993374944" />
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_postcodes"
-          TopLeft="559.70832581756,184.599996699095" />
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Excel Source Output3]"
-          TopLeft="641.187491920777,79.7166660041611">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,104.883330694934"
-              Start="0,0"
-              End="0,97.3833306949337">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,97.3833306949337" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="117.333333333334,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Vehicles"
-          TopLeft="768.333323126038,37.6999993258715" />
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Source -&gt; Stage\Stage_Vehicles"
-          TopLeft="749.041657809789,176.149996850193" />
-        <EdgeLayout
-          Id="Package\Source -&gt; Stage.Paths[Excel Source Output4]"
-          TopLeft="825.687490467913,80.3666659925382">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,95.7833308576544"
-              Start="0,0"
-              End="0,88.2833308576544">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,88.2833308576544" />
+                    End="0,100.142853340506" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4016,6 +4016,32 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Source -&gt; Stage\PCD_OA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_casualties">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_Vehicles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4054,46 +4080,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_casualties">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_Accidents">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Accidents">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Postcodes">
+    design-time-name="Package\Source -&gt; Stage\Vehicles">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4119,7 +4106,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Vehicles">
+    design-time-name="Package\Source -&gt; Stage\Postcodes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4132,7 +4119,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Source -&gt; Stage\Stage_Vehicles">
+    design-time-name="Package\Source -&gt; Stage\Accidents">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Source -&gt; Stage\Stage_Accidents">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
