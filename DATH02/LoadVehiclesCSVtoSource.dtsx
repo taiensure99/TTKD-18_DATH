@@ -1,0 +1,1587 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/17/2021 11:52:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-G8L31P5"
+  DTS:CreatorName="DESKTOP-G8L31P5\USER"
+  DTS:DTSID="{8DB5B717-153F-431F-B505-F668BDCEC03A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadVehiclesCSVtoSource"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DA2600A4-5614-468D-BA43-949B97B51AC2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2FE47B53-043E-4605-98B5-7B1AFB78504E}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\HOCKY9\BI\TH\Data\Vehicles1114.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accident_Index"
+              DTS:DTSID="{7BC19B32-236F-4E0C-957C-C24FD269FA21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Reference"
+              DTS:DTSID="{6B380C05-24C4-4A58-9F1B-BC89904210C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Type"
+              DTS:DTSID="{989F5897-913C-4669-80F9-FD51FBEBC1D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Towing_and_Articulation"
+              DTS:DTSID="{B63AF122-E8CB-49D7-8217-957E9CA13974}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Manoeuvre"
+              DTS:DTSID="{01EAC480-2862-4F45-B28A-EDCDE08C8220}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Location-Restricted_Lane"
+              DTS:DTSID="{11B7BD68-297C-4343-82A7-3B507A7D6136}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Junction_Location"
+              DTS:DTSID="{E3D3C014-132C-4413-B4E5-9F3B8738C045}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Skidding_and_Overturning"
+              DTS:DTSID="{0626947F-7ED5-4925-AFE7-FACF94C6C5DE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hit_Object_in_Carriageway"
+              DTS:DTSID="{D6CF7FB0-42BF-4701-B7B9-596E2F1A0BED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle_Leaving_Carriageway"
+              DTS:DTSID="{27126967-20C6-4A30-961F-467D87E613BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hit_Object_off_Carriageway"
+              DTS:DTSID="{E120A310-AF17-40DE-AB77-1EABDA58FC80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1st_Point_of_Impact"
+              DTS:DTSID="{766C13BC-0038-4FAC-A379-67D7E6BA4E92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Was_Vehicle_Left_Hand_Drive?"
+              DTS:DTSID="{D742B1DA-09DA-4E17-A8BD-BF0296904380}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Journey_Purpose_of_Driver"
+              DTS:DTSID="{DF5105E0-829F-4F1A-AF17-9849F70586DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sex_of_Driver"
+              DTS:DTSID="{4A4742B6-203C-466B-9A32-CDEA699152E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age_of_Driver"
+              DTS:DTSID="{B6E52EA3-F3D0-41D7-BEFA-008729E700AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age_Band_of_Driver"
+              DTS:DTSID="{01508EF4-D832-4287-A735-A33C61BAD05C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Engine_Capacity_(CC)"
+              DTS:DTSID="{903B7D10-1DE2-4DA0-8F5A-B20FD4D6CB17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Propulsion_Code"
+              DTS:DTSID="{CA3E11E7-75AA-489B-9BED-42A269CAD0D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Age_of_Vehicle"
+              DTS:DTSID="{7C0AC30F-AF89-4832-BAA5-020679249C2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver_IMD_Decile"
+              DTS:DTSID="{224A43D1-304E-4A05-9DED-C1D39DB71481}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver_Home_Area_Type"
+              DTS:DTSID="{B44FE238-8463-4735-AE0E-FCF29E6A9E99}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7A3AFF18-3B54-4D90-B092-19820D19F840}"
+      DTS:ObjectName="LocalHost.Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Source;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Vehicles -&gt; Source"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{61A53D4B-D34A-43CA-8AD0-113F327BA2EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Vehicles -&gt; Source"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Vehicles -&gt; Source\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Vehicles -&gt; Source\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Vehicles -&gt; Source\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Vehicles -&gt; Source\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vehicles -&gt; Source\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vehicles -&gt; Source\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Type]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Type]"
+                      name="Vehicle_Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Towing_and_Articulation]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Towing_and_Articulation]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Towing_and_Articulation]"
+                      name="Towing_and_Articulation"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Manoeuvre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Manoeuvre]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Manoeuvre]"
+                      name="Vehicle_Manoeuvre"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Location-Restricted_Lane]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Location-Restricted_Lane]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Location-Restricted_Lane]"
+                      name="Vehicle_Location-Restricted_Lane"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Junction_Location]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Junction_Location]"
+                      name="Junction_Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Skidding_and_Overturning]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Skidding_and_Overturning]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Skidding_and_Overturning]"
+                      name="Skidding_and_Overturning"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_in_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hit_Object_in_Carriageway]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_in_Carriageway]"
+                      name="Hit_Object_in_Carriageway"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Leaving_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Leaving_Carriageway]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Leaving_Carriageway]"
+                      name="Vehicle_Leaving_Carriageway"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_off_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hit_Object_off_Carriageway]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_off_Carriageway]"
+                      name="Hit_Object_off_Carriageway"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[1st_Point_of_Impact]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[1st_Point_of_Impact]"
+                      name="1st_Point_of_Impact"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      name="Was_Vehicle_Left_Hand_Drive?"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Driver]"
+                      name="Sex_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Driver]"
+                      name="Age_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Driver]"
+                      name="Age_Band_of_Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Engine_Capacity_(CC)]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Engine_Capacity_(CC)]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Engine_Capacity_(CC)]"
+                      name="Engine_Capacity_(CC)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Propulsion_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Propulsion_Code]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Propulsion_Code]"
+                      name="Propulsion_Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Vehicle]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Vehicle]"
+                      name="Age_of_Vehicle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_IMD_Decile]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver_IMD_Decile]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_IMD_Decile]"
+                      name="Driver_IMD_Decile"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_Home_Area_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver_Home_Area_Type]"
+                      length="50"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_Home_Area_Type]"
+                      name="Driver_Home_Area_Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Towing_and_Articulation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Towing_and_Articulation" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Manoeuvre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Manoeuvre" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Location-Restricted_Lane]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Location-Restricted_Lane" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Junction_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Skidding_and_Overturning]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Skidding_and_Overturning" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hit_Object_in_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Hit_Object_in_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle_Leaving_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Leaving_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Hit_Object_off_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Hit_Object_off_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="1st_Point_of_Impact" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Was_Vehicle_Left_Hand_Drive?" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Engine_Capacity_(CC)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Engine_Capacity_(CC)" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Propulsion_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Propulsion_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Vehicle" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver_IMD_Decile]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver_IMD_Decile" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver_Home_Area_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver_Home_Area_Type" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Vehicles -&gt; Source\Vehicles_Source"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Vehicles_Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Vehicles_Source]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accident_Index"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Accident_Index]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Reference"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Reference]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Vehicle_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Type"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Type]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Towing_and_Articulation]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Towing_and_Articulation"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Towing_and_Articulation]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Towing_and_Articulation]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Vehicle_Manoeuvre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Manoeuvre"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Manoeuvre]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Manoeuvre]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Vehicle_Location-Restricted_Lane]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Location-Restricted_Lane"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Location-Restricted_Lane]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Location-Restricted_Lane]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Junction_Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Junction_Location"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Junction_Location]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Skidding_and_Overturning]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Skidding_and_Overturning"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Skidding_and_Overturning]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Skidding_and_Overturning]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Hit_Object_in_Carriageway]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Hit_Object_in_Carriageway"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_in_Carriageway]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_in_Carriageway]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Vehicle_Leaving_Carriageway]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle_Leaving_Carriageway"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Leaving_Carriageway]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle_Leaving_Carriageway]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Hit_Object_off_Carriageway]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Hit_Object_off_Carriageway"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_off_Carriageway]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Hit_Object_off_Carriageway]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[1st_Point_of_Impact]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="1st_Point_of_Impact"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[1st_Point_of_Impact]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Was_Vehicle_Left_Hand_Drive?"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Journey_Purpose_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Sex_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Sex_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Age_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Age_Band_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_Band_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_Band_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Engine_Capacity_(CC)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Engine_Capacity_(CC)"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Engine_Capacity_(CC)]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Engine_Capacity_(CC)]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Propulsion_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Propulsion_Code"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Propulsion_Code]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Propulsion_Code]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Age_of_Vehicle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_of_Vehicle"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Age_of_Vehicle]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Driver_IMD_Decile]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver_IMD_Decile"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Driver_IMD_Decile]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_IMD_Decile]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[Driver_Home_Area_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver_Home_Area_Type"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Home_Area_Type]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[Driver_Home_Area_Type]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Towing_and_Articulation]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Towing_and_Articulation" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Manoeuvre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Manoeuvre" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Location-Restricted_Lane]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Location-Restricted_Lane" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Junction_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Skidding_and_Overturning]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Skidding_and_Overturning" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_in_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Hit_Object_in_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Leaving_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Leaving_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Hit_Object_off_Carriageway]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Hit_Object_off_Carriageway" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="1st_Point_of_Impact" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Was_Vehicle_Left_Hand_Drive?" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Engine_Capacity_(CC)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Engine_Capacity_(CC)" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Propulsion_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Propulsion_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Vehicle" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Driver_IMD_Decile]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver_IMD_Decile" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Home_Area_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver_Home_Area_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Vehicles -&gt; Source.Paths[Derived Column Output]"
+              endId="Package\Load Vehicles -&gt; Source\Vehicles_Source.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Vehicles -&gt; Source\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Vehicles -&gt; Source.Paths[Flat File Source Output]"
+              endId="Package\Load Vehicles -&gt; Source\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Vehicles -&gt; Source\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load Vehicles -&gt; Source"
+          TopLeft="275,65" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Vehicles -&gt; Source">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load Vehicles -&gt; Source\Derived Column"
+          TopLeft="351,120" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Vehicles -&gt; Source\Flat File Source"
+          TopLeft="353,42" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Load Vehicles -&gt; Source\Vehicles_Source"
+          TopLeft="346,212" />
+        <EdgeLayout
+          Id="Package\Load Vehicles -&gt; Source.Paths[Flat File Source Output]"
+          TopLeft="430.5,84">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Vehicles -&gt; Source.Paths[Derived Column Output]"
+          TopLeft="428.5,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Vehicles -&gt; Source\Vehicles_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
