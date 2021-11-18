@@ -1,37 +1,25 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="11/17/2021 10:45:54 PM"
+  DTS:CreationDate="11/18/2021 1:08:35 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-G8L31P5"
   DTS:CreatorName="DESKTOP-G8L31P5\USER"
-  DTS:DTSID="{D2612311-9411-46DA-BE45-F5B26B97654E}"
+  DTS:DTSID="{83229C80-5602-4BE1-9A1B-02AB10D36DAA}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
-  DTS:ObjectName="LoadSourceVehiclesToStage"
+  DTS:ObjectName="LoadSourcePostcodesToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{F4C5995E-B64B-4E46-9C5A-469B6C5B6857}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{218E4F01-3100-4816-9D61-02AE43806300}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{91D3ED5A-BE88-4DAC-AEDB-16763BBA95CE}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\HOCKY9\BI\TH\Data\Vehicles1114.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Metadata]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
+      DTS:DTSID="{10E33343-EA04-4F08-BE33-4967C9E0D9E5}"
       DTS:ObjectName="LocalHost.Metadata">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -43,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Source]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{DA7DF001-5955-4B10-AFD7-C3C4F2376D11}"
+      DTS:DTSID="{E5082C61-C26D-4C1F-894A-63400DF78CAA}"
       DTS:ObjectName="LocalHost.Source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -55,7 +43,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Stage]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8AFB8B8D-4302-4D13-9E5F-6ECE429A2426}"
+      DTS:DTSID="{2E18596E-DDE3-4629-A029-29FA670B88D3}"
       DTS:ObjectName="LocalHost.Stage">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -68,7 +56,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F16DD59E-E137-4855-8FD4-F2D93603A846}"
+      DTS:DTSID="{D53C21C4-47A3-4FB1-9261-D2EB9DD7C7B3}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="CET_Result">
@@ -77,7 +65,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{81D13EBD-48D7-4A49-BB47-6667D53861E8}"
+      DTS:DTSID="{408084FF-2CB1-4481-B521-E5585571640E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="LSET_Result">
@@ -90,7 +78,7 @@
       DTS:refId="Package\Get LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{565891be-c9d1-46a5-aaac-8e028def7e4e}"
+      DTS:DTSID="{33DE42BC-CFF0-45FA-A351-BD1B127ADE07}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET"
@@ -99,8 +87,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
-          SQLTask:SqlStatementSource="select LSET, CET from DataFlow where name = 'Vehicle'"
+          SQLTask:Connection="{10E33343-EA04-4F08-BE33-4967C9E0D9E5}"
+          SQLTask:SqlStatementSource="select LSET, CET from DataFlow where name = 'Postcode'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LSET"
@@ -112,13 +100,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Load Vehicle_source to Stage"
+      DTS:refId="Package\Load Postcode_source to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{f77c7f8a-b57e-4e30-92b7-795690898130}"
+      DTS:DTSID="{44EE4D57-D022-4F9B-A5BB-0431FAE13FCD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Load Vehicle_source to Stage"
+      DTS:ObjectName="Load Postcode_source to Stage"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -126,11 +114,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Load Vehicle_source to Stage\Vehicles Source"
+              refId="Package\Load Postcode_source to Stage\Postcode Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Vehicles Source"
+              name="Postcode Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -150,7 +138,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Vehicles_Source where (createdDate &gt;= ? and createdDate &lt; ?) or (updatedDate &gt;= ? and updatedDate &lt; ?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Postcodes_Source where (createdDate &gt;= ? and createdDate &lt; ?) or (updatedDate &gt;= ? and updatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -171,11 +159,11 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{81D13EBD-48D7-4A49-BB47-6667D53861E8};"Parameter1:Input",{F16DD59E-E137-4855-8FD4-F2D93603A846};"Parameter2:Input",{81D13EBD-48D7-4A49-BB47-6667D53861E8};"Parameter3:Input",{F16DD59E-E137-4855-8FD4-F2D93603A846};</property>
+                  name="ParameterMapping">"Parameter0:Input",{408084FF-2CB1-4481-B521-E5585571640E};"Parameter1:Input",{D53C21C4-47A3-4FB1-9261-D2EB9DD7C7B3};"Parameter2:Input",{408084FF-2CB1-4481-B521-E5585571640E};"Parameter3:Input",{D53C21C4-47A3-4FB1-9261-D2EB9DD7C7B3};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Connections[OleDbConnection]"
+                  refId="Package\Load Postcode_source to Stage\Postcode Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.Source]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.Source]"
                   description="The OLE DB runtime connection used to access the database."
@@ -183,329 +171,353 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[postcode]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[postcode]"
+                      name="postcode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[easting]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]"
+                      name="easting"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[northing]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]"
+                      name="northing"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]"
+                      name="latitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]"
+                      name="longitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[county]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[county]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[county]"
+                      name="county"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[country_code]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_code]"
+                      name="country_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[country_name]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_name]"
+                      name="country_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[iso3166-2]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]"
+                      name="iso3166-2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[region_code]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_code]"
+                      name="region_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[region_name]"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_name]"
+                      name="region_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
                       name="CreatedDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
-                      name="Accident_Index"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
-                      name="Vehicle_Reference"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
-                      name="Vehicle_Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Junction_Location]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]"
-                      name="Junction_Location"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[1st_Point_of_Impact]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]"
-                      name="1st_Point_of_Impact"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
-                      name="Was_Vehicle_Left_Hand_Drive?"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
-                      name="Journey_Purpose_of_Driver"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
-                      name="Sex_of_Driver"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Driver]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]"
-                      name="Age_of_Driver"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
-                      name="Age_Band_of_Driver"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
-                      length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
-                      name="Age_of_Vehicle"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[postcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="postcode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[easting]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="easting" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[northing]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="northing" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[county]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="county" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[country_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[country_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="country_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[iso3166-2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="iso3166-2" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[region_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
                       name="CreatedDate" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Accident_Index" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Vehicle_Reference" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Vehicle_Type" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Junction_Location]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Junction_Location" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[1st_Point_of_Impact]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="1st_Point_of_Impact" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Was_Vehicle_Left_Hand_Drive?" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Journey_Purpose_of_Driver" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Sex_of_Driver" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Age_of_Driver" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Age_Band_of_Driver" />
-                    <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Age_of_Vehicle" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[postcode]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
-                      name="Accident_Index" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[postcode]"
+                      name="postcode" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[easting]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
-                      name="Vehicle_Reference" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[easting]"
+                      name="easting" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[northing]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
-                      name="Vehicle_Type" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[northing]"
+                      name="northing" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Junction_Location]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[latitude]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Junction_Location]"
-                      name="Junction_Location" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[latitude]"
+                      name="latitude" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[1st_Point_of_Impact]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[longitude]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[1st_Point_of_Impact]"
-                      name="1st_Point_of_Impact" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[longitude]"
+                      name="longitude" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
-                      name="Was_Vehicle_Left_Hand_Drive?" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[county]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
-                      name="Journey_Purpose_of_Driver" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[county]"
+                      name="county" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[country_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
-                      name="Sex_of_Driver" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[country_code]"
+                      name="country_code" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Driver]"
-                      name="Age_of_Driver" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[country_name]"
+                      name="country_name" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[iso3166-2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
-                      name="Age_Band_of_Driver" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[iso3166-2]"
+                      name="iso3166-2" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[region_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
-                      name="Age_of_Vehicle" />
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[region_code]"
+                      name="region_code" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[region_name]"
+                      name="region_name" />
+                    <outputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       dataType="dbTimeStamp"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -514,11 +526,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Vehicle_source to Stage\Vehicles_Stage"
+              refId="Package\Load Postcode_source to Stage\Postcodes_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Vehicles_Stage"
+              name="Postcodes_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -529,7 +541,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Vehicles_Stage]</property>
+                  name="OpenRowset">[Postcodes_Stage]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -571,7 +583,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Connections[OleDbConnection]"
+                  refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.Stage]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.Stage]"
                   description="The OLE DB runtime connection used to access the database."
@@ -579,190 +591,204 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[postcode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Accident_Index"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
+                      cachedName="postcode"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[postcode]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[easting]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Vehicle_Reference"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
+                      cachedName="easting"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Type]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[northing]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Vehicle_Type"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]" />
+                      cachedName="northing"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Junction_Location]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[latitude]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Junction_Location"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]" />
+                      cachedName="latitude"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[1st_Point_of_Impact]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[longitude]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="1st_Point_of_Impact"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]" />
+                      cachedName="longitude"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[city]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Was_Vehicle_Left_Hand_Drive?"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]" />
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[county]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Journey_Purpose_of_Driver"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                      cachedName="county"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[county]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Sex_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[country_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Sex_of_Driver"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]" />
+                      cachedName="country_code"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_code]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[country_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_of_Driver"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]" />
+                      cachedName="country_name"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_name]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_Band_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[iso3166-2]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_Band_of_Driver"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]" />
+                      cachedName="iso3166-2"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]" />
                     <inputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Vehicle]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[region_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Age_of_Vehicle"
-                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]" />
+                      cachedName="region_code"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_code]" />
+                    <inputColumn
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[region_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region_name"
+                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[postcode]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Accident_Index" />
+                      name="postcode" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Vehicle_Reference" />
+                      name="easting" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Vehicle_Type" />
+                      name="northing" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Junction_Location" />
+                      name="latitude" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="1st_Point_of_Impact" />
+                      name="longitude" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Was_Vehicle_Left_Hand_Drive?" />
+                      name="city" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Journey_Purpose_of_Driver" />
+                      name="county" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Sex_of_Driver" />
+                      name="country_code" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Age_of_Driver" />
+                      name="country_name" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Age_Band_of_Driver" />
+                      name="iso3166-2" />
                     <externalMetadataColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="Age_of_Vehicle" />
+                      name="region_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region_name" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcodes_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Postcode_source to Stage\Postcodes_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -773,10 +799,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Load Vehicle_source to Stage.Paths[OLE DB Source Output]"
-              endId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]"
+              refId="Package\Load Postcode_source to Stage.Paths[OLE DB Source Output]"
+              endId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output]" />
+              startId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -785,7 +811,7 @@
       DTS:refId="Package\Set CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{06eab575-f24b-4dc9-8ac6-2b5a5fb9c150}"
+      DTS:DTSID="{952882BF-499A-440C-874F-7CF18B886001}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET"
@@ -794,15 +820,15 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
-          SQLTask:SqlStatementSource="update DataFlow set CET = getdate() where name = 'Vehicle'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{10E33343-EA04-4F08-BE33-4967C9E0D9E5}"
+          SQLTask:SqlStatementSource="update DataFlow set CET = getdate() where name = 'Postcode'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Set LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{23c227cf-6301-4365-9214-daecd81c22c3}"
+      DTS:DTSID="{05AD3490-4F98-4258-8C7B-03E00AEA35A3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set LSET"
@@ -811,8 +837,8 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
-          SQLTask:SqlStatementSource="update DataFlow set LSET = ?  where name = 'Vehicle'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{10E33343-EA04-4F08-BE33-4967C9E0D9E5}"
+          SQLTask:SqlStatementSource="update DataFlow set LSET = ?  where name = 'Postcode'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::CET_Result"
@@ -823,20 +849,20 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\truncate table Vehicles_Stage"
+      DTS:refId="Package\truncate table Postcodes_Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{f17f82f6-5046-495a-93ab-8200a2f4b8ba}"
+      DTS:DTSID="{D69D4EAA-38DA-413A-AB9E-8798CAC13F4A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="truncate table Vehicles_Stage"
+      DTS:ObjectName="truncate table Postcodes_Stage"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8AFB8B8D-4302-4D13-9E5F-6ECE429A2426}"
-          SQLTask:SqlStatementSource="truncate table Vehicles_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{2E18596E-DDE3-4629-A029-29FA670B88D3}"
+          SQLTask:SqlStatementSource="truncate table Postcodes_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -844,15 +870,15 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{6c234ed8-3b10-4808-9d1b-11b637fff1c2}"
-      DTS:From="Package\truncate table Vehicles_Stage"
+      DTS:DTSID="{8C1EE19C-A099-4455-BD62-B22CABCCA279}"
+      DTS:From="Package\truncate table Postcodes_Stage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Set CET" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{5e6f6742-7139-4ca8-9ccc-b497c554f8fd}"
+      DTS:DTSID="{29FE2E23-B0FF-4323-8102-97E5D0A71E2E}"
       DTS:From="Package\Set CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -860,16 +886,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{a01489a3-0be7-4dc4-99aa-c0e2557dc7a5}"
+      DTS:DTSID="{A6FBF949-C8C4-420B-82D0-3B2351FC455A}"
       DTS:From="Package\Get LSET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Load Vehicle_source to Stage" />
+      DTS:To="Package\Load Postcode_source to Stage" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{26531a98-0d64-4021-b3da-a26e99ffe92a}"
-      DTS:From="Package\Load Vehicle_source to Stage"
+      DTS:DTSID="{32BEA86C-AFDF-4F60-9111-AFDF8A8ABCD5}"
+      DTS:From="Package\Load Postcode_source to Stage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Set LSET" />
@@ -887,28 +913,16 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\Get LSET"
-          TopLeft="185.624998128042,219.421055632285" />
-        <NodeLayout
-          Size="221.333333333334,42.6666666666667"
-          Id="Package\Load Vehicle_source to Stage"
-          TopLeft="136.874998854473,297.754389699697" />
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\truncate table Postcodes_Stage"
+          TopLeft="123.124998165295,25.3157899501912" />
         <NodeLayout
           Size="120,42.6666666666667"
           Id="Package\Set CET"
-          TopLeft="184.374998146668,147.578949016878" />
-        <NodeLayout
-          Size="125.333333333334,42.6666666666667"
-          Id="Package\Set LSET"
-          TopLeft="182.499998174607,373.684214209586" />
-        <NodeLayout
-          Size="221.333333333334,42.6666666666667"
-          Id="Package\truncate table Vehicles_Stage"
-          TopLeft="126.874999003485,73.0000002446928" />
+          TopLeft="180.624997308478,99.8947387223759" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="240.95833190841,115.666666911359">
+          TopLeft="239.541664403553,67.9824566168578">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -928,9 +942,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Get LSET"
+          TopLeft="181.874997289852,171.736845337783" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="246.666664804021,190.245615683545">
+          TopLeft="242.916663965831,142.561405389043">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -950,20 +968,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\Load Postcode_source to Stage"
+          TopLeft="133.124998016283,250.070179405195" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="248.249998491257,262.087722298951">
+          TopLeft="246.833330986401,214.40351200445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.6666674007452"
+              EndConnector="0,35.6666674007449"
               Start="0,0"
-              End="0,28.1666674007452">
+              End="0,28.1666674007449">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.1666674007452" />
+                    End="0,28.1666674007449" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -972,20 +994,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Set LSET"
+          TopLeft="178.749997336417,326.000003915084" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="246.354165181206,340.421056366363">
+          TopLeft="244.93749767635,292.736846071861">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.2631578432222"
+              EndConnector="0,33.2631578432226"
               Start="0,0"
-              End="0,25.7631578432222">
+              End="0,25.7631578432226">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7631578432222" />
+                    End="0,25.7631578432226" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -998,32 +1024,32 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Load Vehicle_source to Stage">
+    design-time-name="Package\Load Postcode_source to Stage">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Load Vehicle_source to Stage\Vehicles Source"
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Load Postcode_source to Stage\Postcode Source"
           TopLeft="205.624996935949,91.6842122520437" />
         <NodeLayout
-          Size="153.333333333334,42.6666666666667"
-          Id="Package\Load Vehicle_source to Stage\Vehicles_Stage"
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Load Postcode_source to Stage\Postcodes_Stage"
           TopLeft="206.874996917322,218.947372542194" />
         <EdgeLayout
-          Id="Package\Load Vehicle_source to Stage.Paths[OLE DB Source Output]"
-          TopLeft="283.916663593302,134.35087891871">
+          Id="Package\Load Postcode_source to Stage.Paths[OLE DB Source Output]"
+          TopLeft="287.249996926636,134.35087891871">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84.5964936234836"
+              EndConnector="0,84.5964936234834"
               Start="0,0"
-              End="0,77.0964936234836">
+              End="0,77.0964936234834">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.0964936234836" />
+                    End="0,77.0964936234834" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1036,7 +1062,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Vehicle_source to Stage\Vehicles Source">
+    design-time-name="Package\Load Postcode_source to Stage\Postcode Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1044,7 +1070,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Vehicle_source to Stage\Vehicles_Stage">
+    design-time-name="Package\Load Postcode_source to Stage\Postcodes_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadSourcePCD_OAToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{B1AAE881-C0BC-4BA1-AD09-291B852C9D72}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{2DF9B451-34D4-4F3F-A370-8C116A926EE4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,30 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E2DC88B6-8EF0-46E9-B047-34AA7E2FCA73}"
+      DTS:ObjectName="LocalHost.Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Metadata;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4BC2A164-E806-4485-984C-E90E7F61199E}"
+      DTS:ObjectName="LocalHost.Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Source;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Stage]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{543D2C79-F6AC-4131-AA62-24096043C654}"
@@ -41,16 +65,60 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7248CA1C-D62F-4BF5-A756-03828E34E58C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_Result">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{99B2110F-177B-4CA1-A9F6-CA96D349C3BC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Result">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Source PCD_OA -&gt; Stage"
+      DTS:refId="Package\Get LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dbbcb8db-dd15-4d54-b84c-c15aeed11c5f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E2DC88B6-8EF0-46E9-B047-34AA7E2FCA73}"
+          SQLTask:SqlStatementSource="select LSET, CET from DataFlow where name = 'Pcd_oa'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_Result" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_Result" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Pcd_oa_source to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{557569B6-28E8-4DBD-9356-6BB132B03550}"
+      DTS:DTSID="{ce62beeb-8789-4312-8fac-94232e100628}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Source PCD_OA -&gt; Stage"
+      DTS:ObjectName="Load Pcd_oa_source to Stage"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -58,11 +126,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source"
+              refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="PCD_OA Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -82,7 +150,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Pcd_oa_Source where (createdDate &gt;= ? and createdDate &lt; ?) or (updatedDate &gt;= ? and updatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -99,40 +167,129 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{99B2110F-177B-4CA1-A9F6-CA96D349C3BC};"Parameter1:Input",{7248CA1C-D62F-4BF5-A756-03828E34E58C};"Parameter2:Input",{99B2110F-177B-4CA1-A9F6-CA96D349C3BC};"Parameter3:Input",{7248CA1C-D62F-4BF5-A756-03828E34E58C};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Source]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[pcd8]"
+                      length="50"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[pcd8]"
+                      name="pcd8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[lsoa11cd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
+                      length="50"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[lsoa11cd]"
+                      name="lsoa11cd"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pcd8" />
+                    <externalMetadataColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].ExternalColumns[lsoa11cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="lsoa11cd" />
+                  </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[pcd8]"
+                      name="pcd8" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[lsoa11cd]"
+                      name="lsoa11cd" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -141,11 +298,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage"
+              refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="PCD_OA_Stage"
+              name="Pcd_oa_Stage"
               usesDispositions="true"
               version="4">
               <properties>
@@ -156,7 +313,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[PCD_OA_Stage]</property>
+                  name="OpenRowset">[Pcd_oa_Stage]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -178,7 +335,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -190,7 +347,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -198,7 +355,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Connections[OleDbConnection]"
+                  refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.Stage]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.Stage]"
                   description="The OLE DB runtime connection used to access the database."
@@ -206,166 +363,64 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[pcd7]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pcd7"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\12:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[pcd8]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="pcd8"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\13:invalid" />
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[pcd8]" />
                     <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[pcds]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="pcds"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\14:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[usertype]"
-                      cachedDataType="r8"
-                      cachedName="usertype"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\15:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[oa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="oa11cd"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\16:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="lsoa11cd"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\17:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[msoa11cd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="msoa11cd"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\18:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[ladcd]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ladcd"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\19:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[lsoa11nm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="lsoa11nm"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\20:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[msoa11nm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="msoa11nm"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\21:invalid" />
-                    <inputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].Columns[ladnm]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ladnm"
-                      externalMetadataColumnId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\22:invalid" />
+                      externalMetadataColumnId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output].Columns[lsoa11cd]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      dataType="wstr"
-                      length="255"
-                      name="pcd7" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="pcd8" />
                     <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      dataType="wstr"
-                      length="255"
-                      name="pcds" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      dataType="r8"
-                      name="usertype" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      dataType="wstr"
-                      length="255"
-                      name="oa11cd" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="lsoa11cd" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      dataType="wstr"
-                      length="255"
-                      name="msoa11cd" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      dataType="wstr"
-                      length="255"
-                      name="ladcd" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      dataType="wstr"
-                      length="255"
-                      name="lsoa11nm" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      dataType="wstr"
-                      length="255"
-                      name="msoa11nm" />
-                    <externalMetadataColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input].ExternalColumns[ladnm]"
-                      dataType="wstr"
-                      length="255"
-                      name="ladnm" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -374,10 +429,109 @@
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Load Pcd_oa_source to Stage.Paths[OLE DB Source Output]"
+              endId="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Pcd_oa_source to Stage\PCD_OA Source.Outputs[OLE DB Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{041380c8-5f33-4d1e-bb48-2fcf28b953b3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E2DC88B6-8EF0-46E9-B047-34AA7E2FCA73}"
+          SQLTask:SqlStatementSource="update DataFlow set CET = getdate() where name = 'Pcd_oa'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{40fb158b-4a6c-4ae2-b299-009b74b0b228}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E2DC88B6-8EF0-46E9-B047-34AA7E2FCA73}"
+          SQLTask:SqlStatementSource="update DataFlow set LSET = ?  where name = 'Pcd_oa'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CET_Result"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table PCD_OA_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{563d08cd-ac9c-498a-99e1-69dbee567230}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table PCD_OA_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{543D2C79-F6AC-4131-AA62-24096043C654}"
+          SQLTask:SqlStatementSource="truncate table PCD_OA_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2960c57e-211a-4b8e-888e-7a351da62a3f}"
+      DTS:From="Package\truncate table PCD_OA_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Set CET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{cbdf0c04-706b-448c-95e4-fe35ae4aa5e5}"
+      DTS:From="Package\Set CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{03957f3c-21e3-412b-a1ce-dcd6e8a71e5d}"
+      DTS:From="Package\Get LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Pcd_oa_source to Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{8d2b7c0e-8438-4973-9e50-914bbd87e7ba}"
+      DTS:From="Package\Load Pcd_oa_source to Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Set LSET" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -389,32 +543,166 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207,42"
-          Id="Package\Source PCD_OA -&gt; Stage"
-          TopLeft="293,86" />
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Get LSET"
+          TopLeft="253.416671230148,255.403512249142" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Load Pcd_oa_source to Stage"
+          TopLeft="204.666671956579,333.736846316555" />
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Set CET"
+          TopLeft="252.166671248774,183.561405633735" />
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Set LSET"
+          TopLeft="250.291671276713,409.666670826444" />
+        <NodeLayout
+          Size="224,42.6666666666667"
+          Id="Package\truncate table PCD_OA_Stage"
+          TopLeft="194.666672105591,108.982456861551" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="309.416671677182,151.649123528217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.912282105518"
+              Start="0,0"
+              End="0,24.412282105518">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.412282105518" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="314.458337906127,226.228072300403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1754399487407"
+              Start="0,0"
+              End="0,21.6754399487407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6754399487407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="316.375004926696,298.070178915809">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6666674007454"
+              Start="0,0"
+              End="0,28.1666674007454">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1666674007454" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="314.479171616646,376.403512983221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.2631578432224"
+              Start="0,0"
+              End="0,25.7631578432224">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7631578432224" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Source PCD_OA -&gt; Stage">
+    design-time-name="Package\Load Pcd_oa_source to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="159,42"
-          Id="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage"
-          TopLeft="309,149" />
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage"
+          TopLeft="206.874996917322,218.947372542194" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\Source PCD_OA -&gt; Stage\OLE DB Source"
-          TopLeft="309,39" />
+          Size="160,42.6666666666667"
+          Id="Package\Load Pcd_oa_source to Stage\PCD_OA Source"
+          TopLeft="205.624996935949,91.6842122520437" />
+        <EdgeLayout
+          Id="Package\Load Pcd_oa_source to Stage.Paths[OLE DB Source Output]"
+          TopLeft="283.583330259969,134.35087891871">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.5964936234836"
+              Start="0,0"
+              End="0,77.0964936234836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.0964936234836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Source PCD_OA -&gt; Stage\PCD_OA_Stage">
+    design-time-name="Package\Load Pcd_oa_source to Stage\PCD_OA Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Pcd_oa_source to Stage\Pcd_oa_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

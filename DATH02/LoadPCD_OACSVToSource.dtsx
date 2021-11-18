@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPCD_OACSVToSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{31B88826-97EE-4F8F-ACB4-128D9FA1C7F2}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{F3083DAB-5539-478E-BE1B-27A9AABB3C65}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{F46ECB7D-E5D5-4D91-9110-6051D44DB374}"
+      DTS:DTSID="{6FF7BDFE-FBFF-4891-B1CB-102F00B5B945}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\HOCKY9\BI\TH\Data\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU.csv">
+          DTS:ConnectionString="E:\HOCKI9\BI\TH\Data\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcd7"
-              DTS:DTSID="{BB9A7334-BF72-42F2-BDA4-9C79A7D8352E}"
+              DTS:DTSID="{1319CAC2-171A-4BCB-A2A1-355BAFB55A6B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcd8"
-              DTS:DTSID="{B0277AE6-F225-4C7C-982B-F17FF9989CB1}"
+              DTS:DTSID="{37319208-D12D-4491-BE09-FBA943DC4966}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="pcds"
-              DTS:DTSID="{0D87B5DE-8062-4075-8A6F-F3C83C380927}"
+              DTS:DTSID="{7FBEAA38-AADC-4E8F-BFAD-F16E177A4E17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="dointr"
-              DTS:DTSID="{CF258C4C-F733-46C6-9C98-4F732912814C}"
+              DTS:DTSID="{76501434-2AD7-4ABC-BFAE-5F6961CA23D6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="doterm"
-              DTS:DTSID="{B5BE4F39-C4D2-4DE0-9F3B-E393673A955C}"
+              DTS:DTSID="{051FFAD7-073A-441E-8E88-5A81C14C480C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="usertype"
-              DTS:DTSID="{84D107B2-BFE1-48E7-9A0E-AD7700AA836D}"
+              DTS:DTSID="{B20D60AA-61F8-4D1A-8752-175752DE1A35}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="oa11cd"
-              DTS:DTSID="{B0239624-3D2F-4F6D-BF73-632D1CA57A6A}"
+              DTS:DTSID="{6E2E99F8-B2B0-47E2-B3C1-E58E052472BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="lsoa11cd"
-              DTS:DTSID="{67AF406E-93B8-4C74-BD0E-FE44435625B3}"
+              DTS:DTSID="{45D81FA0-D320-49A9-853D-556D2EABB418}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +111,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="msoa11cd"
-              DTS:DTSID="{A869F10E-675D-4A79-A0D6-AB660343C5D3}"
+              DTS:DTSID="{CC8E9DD3-3D73-40C2-84FA-47ED4F7D2B2C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +120,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladcd"
-              DTS:DTSID="{E9CEDC59-4202-42D4-AC77-733B61E77C1C}"
+              DTS:DTSID="{82B77356-712B-4F0A-AB30-70BADF38F401}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +129,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="lsoa11nm"
-              DTS:DTSID="{B5C688B9-3686-4441-BE84-A063462FF7A4}"
+              DTS:DTSID="{52A1545B-48C7-4807-B8FC-C78765366096}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +138,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="msoa11nm"
-              DTS:DTSID="{3259D7FC-EAC3-4369-BE5C-9C351D637359}"
+              DTS:DTSID="{25F7D2D0-A94F-426D-801A-46971A77AD10}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -147,7 +147,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladnm"
-              DTS:DTSID="{2E5C4CA1-F2BF-4486-AA6C-8B43C87955B9}"
+              DTS:DTSID="{8BCECC71-CD7B-47E9-AD18-1D9164F7E6EB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -156,126 +156,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ladnmw"
-              DTS:DTSID="{BD342CBC-A622-4DF7-98F8-C949B6CED058}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{50A49A74-9001-4FFD-A455-2E6809861B17}"
-      DTS:ObjectName="Flat File Connection Manager 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="E:\HOCKY9\BI\TH\Data\PCD_OA_LSOA_MSOA_LAD_AUG21_UK_LU.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="pcd7"
-              DTS:DTSID="{AA502DCD-6C78-4D75-97CD-7CECBDB5AD2C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="pcd8"
-              DTS:DTSID="{63D183DF-01BE-4B5D-9994-01DB8E87B2E8}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="pcds"
-              DTS:DTSID="{6C1CEBFA-08E8-4C79-A398-1126B505503D}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="usertype"
-              DTS:DTSID="{5C195D62-9810-4990-87C8-392F7DABDE11}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="oa11cd"
-              DTS:DTSID="{3E2D47A0-AA46-4C83-B621-C1BE17A471FF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="lsoa11cd"
-              DTS:DTSID="{57445DED-A4BA-4112-9F30-FF0B59C4BDFB}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="msoa11cd"
-              DTS:DTSID="{2BC8B55E-8A6F-444E-BE0E-1F67EF11898C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ladcd"
-              DTS:DTSID="{96213C8B-3C80-4471-BBDB-B474EBFF9078}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="lsoa11nm"
-              DTS:DTSID="{B2E2A344-B5A1-46BC-ADE7-D19E3AC2763C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="msoa11nm"
-              DTS:DTSID="{373EF30E-08A1-4737-B244-29797B2EE542}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="ladnm"
-              DTS:DTSID="{E9E9A321-E000-4F28-BC23-5A61E9CBCD05}"
+              DTS:DTSID="{D5B2ED5C-776B-4AB1-8CBC-A7C550DD980B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -322,6 +203,58 @@
                   refId="Package\Load PCD_OA -&gt; Source\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load PCD_OA -&gt; Source\Derived Column.Inputs[Derived Column Input].Columns[lsoa11cd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="lsoa11cd"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11cd]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(lsoa11cd,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load PCD_OA -&gt; Source\Derived Column.Inputs[Derived Column Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd8]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd8]},"\"","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(pcd8,"\"","")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -427,8 +360,8 @@
               <connections>
                 <connection
                   refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -436,28 +369,6 @@
                   refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd7]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pcd7]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd7]"
-                      name="pcd7"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd8]"
                       codePage="1252"
@@ -481,72 +392,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcds]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[pcds]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcds]"
-                      name="pcds"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[usertype]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[usertype]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[usertype]"
-                      name="usertype"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[oa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[oa11cd]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[oa11cd]"
-                      name="oa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
                       codePage="1252"
                       dataType="str"
@@ -556,94 +401,6 @@
                       length="50"
                       lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11cd]"
                       name="lsoa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[msoa11cd]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11cd]"
-                      name="msoa11cd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[ladcd]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ladcd]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[ladcd]"
-                      name="ladcd"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[lsoa11nm]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11nm]"
-                      name="lsoa11nm"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[msoa11nm]"
-                      length="50"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11nm]"
-                      name="msoa11nm"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -725,6 +482,24 @@
                       dataType="str"
                       length="50"
                       name="ladnm" />
+                    <externalMetadataColumn
+                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[dointr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="dointr" />
+                    <externalMetadataColumn
+                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[doterm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="doterm" />
+                    <externalMetadataColumn
+                      refId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ladnmw]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ladnmw" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -829,46 +604,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[pcd7]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="pcd7"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd7]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[pcd8]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="pcd8"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd8]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[pcds]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="pcds"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcds]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[usertype]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="usertype"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[usertype]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[oa11cd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="oa11cd"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[oa11cd]" />
-                    <inputColumn
                       refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[lsoa11cd]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -876,38 +611,6 @@
                       cachedName="lsoa11cd"
                       externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
                       lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11cd]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[msoa11cd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="msoa11cd"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11cd]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[ladcd]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="ladcd"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[ladcd]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[lsoa11nm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="lsoa11nm"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[lsoa11nm]" />
-                    <inputColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[msoa11nm]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="msoa11nm"
-                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[msoa11nm]" />
                     <inputColumn
                       refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
@@ -920,69 +623,23 @@
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\Load PCD_OA -&gt; Source\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].Columns[pcd8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pcd8"
+                      externalMetadataColumnId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      lineageId="Package\Load PCD_OA -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[pcd8]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd7]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="pcd7" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="pcd8" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcds]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="pcds" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[usertype]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="usertype" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[oa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="oa11cd" />
                     <externalMetadataColumn
                       refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11cd]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="lsoa11cd" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[msoa11cd]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="msoa11cd" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[ladcd]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="ladcd" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[lsoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="lsoa11nm" />
-                    <externalMetadataColumn
-                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[msoa11nm]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="msoa11nm" />
                     <externalMetadataColumn
                       refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
                       dataType="dbTimeStamp"
@@ -991,6 +648,12 @@
                       refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load PCD_OA -&gt; Source\PCD_OA_Source.Inputs[OLE DB Destination Input].ExternalColumns[pcd8]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pcd8" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1051,7 +714,7 @@
         <NodeLayout
           Size="202,42"
           Id="Package\Load PCD_OA -&gt; Source"
-          TopLeft="253,66" />
+          TopLeft="158.625001406297,106.368421812467" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1061,31 +724,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Load PCD_OA -&gt; Source\Flat File Source"
-          TopLeft="281,31" />
+          Size="165.333333333334,42"
+          Id="Package\Load PCD_OA -&gt; Source\PCD_OA_Source"
+          TopLeft="277,195" />
         <NodeLayout
           Size="158,42"
           Id="Package\Load PCD_OA -&gt; Source\Derived Column"
           TopLeft="283,107" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Load PCD_OA -&gt; Source\PCD_OA_Source"
-          TopLeft="277,195" />
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load PCD_OA -&gt; Source\Flat File Source"
+          TopLeft="281,31" />
         <EdgeLayout
           Id="Package\Load PCD_OA -&gt; Source.Paths[Flat File Source Output]"
-          TopLeft="360.5,73">
+          TopLeft="360.166666666667,73.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,33.3333333333333"
               Start="0,0"
-              End="0,26.5">
+              End="0,25.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,25.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

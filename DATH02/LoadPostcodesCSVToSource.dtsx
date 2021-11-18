@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPostcodesCSVToSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{7E424D65-BC37-4698-B18C-290B18A50ADD}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{388CF335-FD21-4380-8FBD-3FB38627B0E7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{9486B64D-CACB-43F9-93F4-B6A9366CD117}"
+      DTS:DTSID="{E8470CA0-B313-483E-AF11-F11710D03195}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\HOCKY9\BI\TH\Data\postcodes.csv">
+          DTS:ConnectionString="E:\HOCKI9\BI\TH\Data\postcodes.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="postcode"
-              DTS:DTSID="{1D44B973-8D9B-4D8A-96F7-A16E3790A186}"
+              DTS:DTSID="{1CC9FE28-5032-4A4C-8714-043372C3A989}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="easting"
-              DTS:DTSID="{D85F06C1-CFDC-4DE1-A54B-28369BD10F45}"
+              DTS:DTSID="{7E98C7E9-03A9-48DB-9189-4186DDFD66CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="northing"
-              DTS:DTSID="{582B0F69-59E9-49BF-93F7-8D3610286EA6}"
+              DTS:DTSID="{A6A607B0-25A4-47DE-BC99-A5F8F1800BC8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{6C575FDF-C531-47BF-A6D2-1714A43A5490}"
+              DTS:DTSID="{80C491DF-31DB-4E73-98F8-A92B635ACF32}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{5689B775-AB46-4A60-A4FE-95B47681D003}"
+              DTS:DTSID="{636F6562-617F-4F01-8E46-02615166420B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{3E91922B-B50F-4216-829A-20F9CDBF24F0}"
+              DTS:DTSID="{3EE33DBA-3E55-4EF1-A1E3-06FCE5C661E9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county"
-              DTS:DTSID="{3C54D73F-650B-4914-A683-8706DEB440FD}"
+              DTS:DTSID="{37FF8866-D963-4700-ACA2-712F5D6BFE2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +102,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_code"
-              DTS:DTSID="{C0E1E71D-30FC-4D71-BA58-05A3F6BCAF07}"
+              DTS:DTSID="{BAEF49A5-4653-4BF9-B7FF-4A024ABD1DD1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +111,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_name"
-              DTS:DTSID="{0C0896F2-DC46-4DEB-8391-FA0C87D5354F}"
+              DTS:DTSID="{1E98CCEB-4E77-4C06-BB44-EE891AB8ACE7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +120,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="iso3166-2"
-              DTS:DTSID="{959CC4B0-BE9D-4F7B-9987-94A3CE661875}"
+              DTS:DTSID="{2BB4C7CA-B5E6-4019-8534-EF0CBDDA060D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +129,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_code"
-              DTS:DTSID="{3A2FF12C-51AB-421C-B50D-F901884143CC}"
+              DTS:DTSID="{38E87AB4-724C-4D6E-9F71-598183976447}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +138,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_name"
-              DTS:DTSID="{A631954D-D273-4CBB-8018-A2593D285F5B}"
+              DTS:DTSID="{038DEBCF-96EB-4928-A3D0-8FA22D457668}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -990,7 +990,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="209,42"
+          Size="209.333333333334,42"
           Id="Package\Load Postcodes -&gt; Source"
           TopLeft="208,66" />
       </GraphLayout>
@@ -1002,17 +1002,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Load Postcodes -&gt; Source\Flat File Source"
-          TopLeft="281,43" />
-        <NodeLayout
           Size="158,42"
           Id="Package\Load Postcodes -&gt; Source\Derived Column"
           TopLeft="279,125" />
         <NodeLayout
-          Size="171,42"
+          Size="170.666666666667,42"
           Id="Package\Load Postcodes -&gt; Source\Postcodes_Source"
           TopLeft="270,207" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Postcodes -&gt; Source\Flat File Source"
+          TopLeft="281,43" />
         <EdgeLayout
           Id="Package\Load Postcodes -&gt; Source.Paths[Flat File Source Output]"
           TopLeft="358.5,85">

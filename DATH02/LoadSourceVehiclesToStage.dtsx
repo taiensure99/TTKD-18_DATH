@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadSourceVehiclesToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{4035B83F-B533-4046-9539-2F41E7CA3CB2}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{F4C5995E-B64B-4E46-9C5A-469B6C5B6857}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,30 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Metadata]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
+      DTS:ObjectName="LocalHost.Metadata">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Metadata;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA7DF001-5955-4B10-AFD7-C3C4F2376D11}"
+      DTS:ObjectName="LocalHost.Source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Source;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.Stage]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{8AFB8B8D-4302-4D13-9E5F-6ECE429A2426}"
@@ -41,16 +65,60 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F16DD59E-E137-4855-8FD4-F2D93603A846}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET_Result">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81D13EBD-48D7-4A49-BB47-6667D53861E8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Result">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Sources Vehicles -&gt; Stage"
+      DTS:refId="Package\Get LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{565891be-c9d1-46a5-aaac-8e028def7e4e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
+          SQLTask:SqlStatementSource="select LSET, CET from DataFlow where name = 'Vehicle'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_Result" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="CET"
+            SQLTask:DtsVariableName="User::CET_Result" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Vehicle_source to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{04616973-A90A-4C7B-9350-7F8C0F82FA64}"
+      DTS:DTSID="{f77c7f8a-b57e-4e30-92b7-795690898130}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sources Vehicles -&gt; Stage"
+      DTS:ObjectName="Load Vehicle_source to Stage"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -58,11 +126,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source"
+              refId="Package\Load Vehicle_source to Stage\Vehicles Source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="OLE DB Source"
+              name="Vehicles Source"
               usesDispositions="true"
               version="7">
               <properties>
@@ -82,7 +150,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from Vehicles_Source where (createdDate &gt;= ? and createdDate &lt; ?) or (updatedDate &gt;= ? and updatedDate &lt; ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -99,40 +167,345 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parameter0:Input",{81D13EBD-48D7-4A49-BB47-6667D53861E8};"Parameter1:Input",{F16DD59E-E137-4855-8FD4-F2D93603A846};"Parameter2:Input",{81D13EBD-48D7-4A49-BB47-6667D53861E8};"Parameter3:Input",{F16DD59E-E137-4855-8FD4-F2D93603A846};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Source]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]"
+                      name="Accident_Index"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]"
+                      name="Vehicle_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Junction_Location]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]"
+                      name="Junction_Location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[1st_Point_of_Impact]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]"
+                      name="1st_Point_of_Impact"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      name="Was_Vehicle_Left_Hand_Drive?"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]"
+                      name="Sex_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]"
+                      name="Age_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]"
+                      name="Age_Band_of_Driver"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]"
+                      name="Age_of_Vehicle"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Accident_Index" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Reference" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Junction_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="1st_Point_of_Impact" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Was_Vehicle_Left_Hand_Drive?" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Journey_Purpose_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sex_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_Band_of_Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].ExternalColumns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Age_of_Vehicle" />
+                  </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Accident_Index]"
+                      name="Accident_Index" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Reference]"
+                      name="Vehicle_Reference" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Vehicle_Type]"
+                      name="Vehicle_Type" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Junction_Location]"
+                      name="Junction_Location" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[1st_Point_of_Impact]"
+                      name="1st_Point_of_Impact" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      name="Was_Vehicle_Left_Hand_Drive?" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Journey_Purpose_of_Driver]"
+                      name="Journey_Purpose_of_Driver" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Sex_of_Driver]"
+                      name="Sex_of_Driver" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Driver]"
+                      name="Age_of_Driver" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_Band_of_Driver]"
+                      name="Age_Band_of_Driver" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[Age_of_Vehicle]"
+                      name="Age_of_Vehicle" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -141,7 +514,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage"
+              refId="Package\Load Vehicle_source to Stage\Vehicles_Stage"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -178,7 +551,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -190,7 +563,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -198,7 +571,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Connections[OleDbConnection]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.Stage]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.Stage]"
                   description="The OLE DB runtime connection used to access the database."
@@ -206,148 +579,190 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Accident_Index]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Accident_Index"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\12:invalid" />
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
                     <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
-                      cachedDataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Reference]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Vehicle_Reference"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\13:invalid" />
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Reference]" />
                     <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Type]"
-                      cachedDataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Vehicle_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Vehicle_Type"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\14:invalid" />
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Vehicle_Type]" />
                     <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[1st_Point_of_Impact]"
-                      cachedDataType="r8"
-                      cachedName="1st_Point_of_Impact"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\15:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Was_Vehicle_Left_Hand_Drive?]"
-                      cachedDataType="r8"
-                      cachedName="Was_Vehicle_Left_Hand_Drive?"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\16:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver]"
-                      cachedDataType="r8"
-                      cachedName="Journey_Purpose_of_Driver"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\17:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Sex_of_Driver]"
-                      cachedDataType="r8"
-                      cachedName="Sex_of_Driver"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\18:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Driver]"
-                      cachedDataType="r8"
-                      cachedName="Age_of_Driver"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\19:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_Band_of_Driver]"
-                      cachedDataType="r8"
-                      cachedName="Age_Band_of_Driver"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\20:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Vehicle]"
-                      cachedDataType="r8"
-                      cachedName="Age_of_Vehicle"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\21:invalid" />
-                    <inputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Junction_Location]"
-                      cachedDataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Junction_Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
                       cachedName="Junction_Location"
-                      externalMetadataColumnId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\22:invalid" />
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Junction_Location]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[1st_Point_of_Impact]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="1st_Point_of_Impact"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[1st_Point_of_Impact]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Was_Vehicle_Left_Hand_Drive?]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Was_Vehicle_Left_Hand_Drive?"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Was_Vehicle_Left_Hand_Drive?]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Journey_Purpose_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Journey_Purpose_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Journey_Purpose_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Sex_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sex_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Sex_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_Band_of_Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_Band_of_Driver"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_Band_of_Driver]" />
+                    <inputColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].Columns[Age_of_Vehicle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age_of_Vehicle"
+                      externalMetadataColumnId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output].Columns[Age_of_Vehicle]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Index]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Accident_Index" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Reference]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Vehicle_Reference" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Vehicle_Type" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Junction_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[1st_Point_of_Impact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="1st_Point_of_Impact" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Was_Vehicle_Left_Hand_Drive?]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Was_Vehicle_Left_Hand_Drive?" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Journey_Purpose_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Journey_Purpose_of_Driver" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Sex_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Sex_of_Driver" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Age_of_Driver" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_Band_of_Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Age_Band_of_Driver" />
                     <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
-                      dataType="r8"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Age_of_Vehicle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="Age_of_Vehicle" />
-                    <externalMetadataColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Junction_Location]"
-                      dataType="r8"
-                      name="Junction_Location" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -356,10 +771,109 @@
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Load Vehicle_source to Stage.Paths[OLE DB Source Output]"
+              endId="Package\Load Vehicle_source to Stage\Vehicles_Stage.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Vehicle_source to Stage\Vehicles Source.Outputs[OLE DB Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set CET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{06eab575-f24b-4dc9-8ac6-2b5a5fb9c150}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set CET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
+          SQLTask:SqlStatementSource="update DataFlow set CET = getdate() where name = 'Vehicle'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{23c227cf-6301-4365-9214-daecd81c22c3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AA4E4B72-30FD-489F-9CB4-6AB168CE4E1B}"
+          SQLTask:SqlStatementSource="update DataFlow set LSET = ?  where name = 'Vehicle'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CET_Result"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table Vehicles_Stage"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{f17f82f6-5046-495a-93ab-8200a2f4b8ba}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table Vehicles_Stage"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8AFB8B8D-4302-4D13-9E5F-6ECE429A2426}"
+          SQLTask:SqlStatementSource="truncate table Vehicles_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6c234ed8-3b10-4808-9d1b-11b637fff1c2}"
+      DTS:From="Package\truncate table Vehicles_Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Set CET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5e6f6742-7139-4ca8-9ccc-b497c554f8fd}"
+      DTS:From="Package\Set CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{a01489a3-0be7-4dc4-99aa-c0e2557dc7a5}"
+      DTS:From="Package\Get LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Load Vehicle_source to Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{26531a98-0d64-4021-b3da-a26e99ffe92a}"
+      DTS:From="Package\Load Vehicle_source to Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Set LSET" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -371,32 +885,166 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="209,42"
-          Id="Package\Sources Vehicles -&gt; Stage"
-          TopLeft="281,88" />
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Get LSET"
+          TopLeft="185.624998128042,219.421055632285" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\Load Vehicle_source to Stage"
+          TopLeft="136.874998854473,297.754389699697" />
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Set CET"
+          TopLeft="184.374998146668,147.578949016878" />
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Set LSET"
+          TopLeft="182.499998174607,373.684214209586" />
+        <NodeLayout
+          Size="221.333333333334,42.6666666666667"
+          Id="Package\truncate table Vehicles_Stage"
+          TopLeft="126.874999003485,73.0000002446928" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="240.95833190841,115.666666911359">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.9122821055181"
+              Start="0,0"
+              End="0,24.4122821055181">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4122821055181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="246.666664804021,190.245615683545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1754399487407"
+              Start="0,0"
+              End="0,21.6754399487407">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6754399487407" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="248.249998491257,262.087722298951">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6666674007452"
+              Start="0,0"
+              End="0,28.1666674007452">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1666674007452" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="246.354165181206,340.421056366363">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.2631578432222"
+              Start="0,0"
+              End="0,25.7631578432222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7631578432222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Sources Vehicles -&gt; Stage">
+    design-time-name="Package\Load Vehicle_source to Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage"
-          TopLeft="263,135" />
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Load Vehicle_source to Stage\Vehicles Source"
+          TopLeft="205.624996935949,91.6842122520437" />
         <NodeLayout
-          Size="157,42"
-          Id="Package\Sources Vehicles -&gt; Stage\OLE DB Source"
-          TopLeft="268,43" />
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\Load Vehicle_source to Stage\Vehicles_Stage"
+          TopLeft="206.874996917322,218.947372542194" />
+        <EdgeLayout
+          Id="Package\Load Vehicle_source to Stage.Paths[OLE DB Source Output]"
+          TopLeft="283.916663593302,134.35087891871">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.5964936234836"
+              Start="0,0"
+              End="0,77.0964936234836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.0964936234836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sources Vehicles -&gt; Stage\Vehicles_Stage">
+    design-time-name="Package\Load Vehicle_source to Stage\Vehicles Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Vehicle_source to Stage\Vehicles_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
