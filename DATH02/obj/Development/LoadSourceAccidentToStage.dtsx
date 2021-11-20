@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{99420091-F4A4-4D3D-AA1C-10C2FD51D942}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{ACAF6719-17F9-434E-9CCD-2AE4AC2648AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -217,100 +217,86 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Longitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Longitude]"
                       name="Longitude"
+                      precision="8"
+                      scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Latitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Latitude]"
                       name="Latitude"
+                      precision="8"
+                      scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]"
                       name="Accident_Severity"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]"
                       name="Number_of_Vehicles"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualties]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]"
                       name="Number_of_Casualties"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Date]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Date]"
                       name="Date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Day_of_Week]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Day_of_Week]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Day_of_Week]"
                       name="Day_of_Week"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Time]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Time]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Time]"
                       name="Time"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_(District)]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]"
                       name="Local_Authority_(District)"
                       truncationRowDisposition="FailComponent" />
@@ -327,78 +313,64 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Type]"
                       name="Road_Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Speed_limit]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Speed_limit]"
                       name="Speed_limit"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]"
                       name="Light_Conditions"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Weather_Conditions]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Weather_Conditions]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Weather_Conditions]"
                       name="Weather_Conditions"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Surface_Conditions]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Surface_Conditions]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Surface_Conditions]"
                       name="Road_Surface_Conditions"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Special_Conditions_at_Site]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Special_Conditions_at_Site]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Special_Conditions_at_Site]"
                       name="Special_Conditions_at_Site"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
-                      length="50"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]"
                       name="Urban_or_Rural_Area"
                       truncationRowDisposition="FailComponent" />
@@ -432,57 +404,43 @@
                       name="Accident_Index" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Longitude" />
+                      dataType="numeric"
+                      name="Longitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Latitude" />
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Accident_Severity" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Vehicles" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Casualties" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Day_of_Week]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Day_of_Week" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbTimeStamp"
                       name="Time" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_(District)]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Local_Authority_(District)" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Local_Authority_(Highway)]"
@@ -492,45 +450,31 @@
                       name="Local_Authority_(Highway)" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Type" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Speed_limit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Speed_limit" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Light_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Weather_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Weather_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Road_Surface_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Surface_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Special_Conditions_at_Site]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Special_Conditions_at_Site" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Urban_or_Rural_Area" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].ExternalColumns[LSOA_of_Accident_Location]"
@@ -554,65 +498,51 @@
                       name="Accident_Index" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Longitude]"
-                      name="Longitude" />
+                      name="Longitude"
+                      precision="8"
+                      scale="6" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Latitude]"
-                      name="Latitude" />
+                      name="Latitude"
+                      precision="8"
+                      scale="6" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Accident_Severity]"
                       name="Accident_Severity" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Vehicles]"
                       name="Number_of_Vehicles" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Number_of_Casualties]"
                       name="Number_of_Casualties" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbTimeStamp"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Date]"
                       name="Date" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Day_of_Week]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Day_of_Week]"
                       name="Day_of_Week" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbTimeStamp"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Time]"
                       name="Time" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Local_Authority_(District)]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Local_Authority_(District)]"
                       name="Local_Authority_(District)" />
                     <outputColumn
@@ -624,51 +554,37 @@
                       name="Local_Authority_(Highway)" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Road_Type]"
                       name="Road_Type" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Speed_limit]"
                       name="Speed_limit" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Light_Conditions]"
                       name="Light_Conditions" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Weather_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Weather_Conditions]"
                       name="Weather_Conditions" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Road_Surface_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Road_Surface_Conditions]"
                       name="Road_Surface_Conditions" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Special_Conditions_at_Site]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Special_Conditions_at_Site]"
                       name="Special_Conditions_at_Site" />
                     <outputColumn
                       refId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Error Output].Columns[Urban_or_Rural_Area]"
                       name="Urban_or_Rural_Area" />
                     <outputColumn
@@ -787,73 +703,59 @@
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Accident_Index]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Longitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Longitude"
+                      cachedPrecision="8"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Longitude]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Latitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Latitude"
+                      cachedPrecision="8"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Latitude]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Accident_Severity]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Accident_Severity"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Accident_Severity]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Vehicles]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Number_of_Vehicles"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Vehicles]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Number_of_Casualties]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Number_of_Casualties"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Number_of_Casualties]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbTimeStamp"
                       cachedName="Date"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Date]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Day_of_Week]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Day_of_Week"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Day_of_Week]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Day_of_Week]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Time]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbTimeStamp"
                       cachedName="Time"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Time]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Local_Authority_(District)]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Local_Authority_(District)"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(District)]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Local_Authority_(District)]" />
@@ -867,57 +769,43 @@
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Local_Authority_(Highway)]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Road_Type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Road_Type"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Type]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Speed_limit]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Speed_limit"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Speed_limit]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Speed_limit]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Light_Conditions]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Light_Conditions"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Light_Conditions]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Weather_Conditions]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Weather_Conditions"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Weather_Conditions]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Weather_Conditions]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Road_Surface_Conditions]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Road_Surface_Conditions"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Surface_Conditions]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Road_Surface_Conditions]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Special_Conditions_at_Site]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Special_Conditions_at_Site"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Special_Conditions_at_Site]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Special_Conditions_at_Site]" />
                     <inputColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].Columns[Urban_or_Rural_Area]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Urban_or_Rural_Area"
                       externalMetadataColumnId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
                       lineageId="Package\Load Accident_source to Stage\Accident Source.Outputs[OLE DB Source Output].Columns[Urban_or_Rural_Area]" />
@@ -940,57 +828,44 @@
                       name="Accident_Index" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Longitude" />
+                      dataType="numeric"
+                      name="Longitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Latitude" />
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Accident_Severity]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Accident_Severity" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Vehicles]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Vehicles" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Number_of_Casualties]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Number_of_Casualties" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="dbDate"
                       name="Date" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Day_of_Week]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Day_of_Week" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Time]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Time" />
+                      dataType="dbTime2"
+                      name="Time"
+                      scale="7" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(District)]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Local_Authority_(District)" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Local_Authority_(Highway)]"
@@ -1000,45 +875,31 @@
                       name="Local_Authority_(Highway)" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Type" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Speed_limit]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Speed_limit" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Light_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Light_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Weather_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Weather_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Road_Surface_Conditions]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Road_Surface_Conditions" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Special_Conditions_at_Site]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Special_Conditions_at_Site" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[Urban_or_Rural_Area]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Urban_or_Rural_Area" />
                     <externalMetadataColumn
                       refId="Package\Load Accident_source to Stage\Accidents_Stage.Inputs[OLE DB Destination Input].ExternalColumns[LSOA_of_Accident_Location]"
@@ -1191,14 +1052,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
-          Id="Package\truncate table Accidents_Stage"
-          TopLeft="172.499998323619,86.6842110285799" />
-        <NodeLayout
-          Size="120,42.6666666666667"
-          Id="Package\Set CET"
-          TopLeft="224.999997541308,158.526317643987" />
-        <NodeLayout
           Size="126.666666666667,42.6666666666667"
           Id="Package\Get LSET"
           TopLeft="229.374997476116,231.052634798589" />
@@ -1207,9 +1060,17 @@
           Id="Package\Load Accident_source to Stage"
           TopLeft="175.624998277053,308.701758326806" />
         <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Set CET"
+          TopLeft="224.999997541308,158.526317643987" />
+        <NodeLayout
           Size="125.333333333334,42.6666666666667"
           Id="Package\Set LSET"
           TopLeft="223.124997569248,386.000003915084" />
+        <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\truncate table Accidents_Stage"
+          TopLeft="172.499998323619,86.6842110285799" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="285.416664599131,129.350877695247">
@@ -1340,6 +1201,14 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Accident_source to Stage\Accident Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Accident_source to Stage\Accidents_Stage">
     <Properties>
       <Property>
@@ -1349,14 +1218,6 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Accident_source to Stage\Accident Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

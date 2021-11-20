@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadPostcodesCSVToSource"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{388CF335-FD21-4380-8FBD-3FB38627B0E7}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{6E51AD90-7062-4A54-B746-95FDAD49E515}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E8470CA0-B313-483E-AF11-F11710D03195}"
+      DTS:DTSID="{C931319B-D281-4B75-86BA-191E6C9FD149}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -39,43 +39,41 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="postcode"
-              DTS:DTSID="{1CC9FE28-5032-4A4C-8714-043372C3A989}"
+              DTS:DTSID="{254E51D3-B932-4660-A821-BB5D63E3184D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="easting"
-              DTS:DTSID="{7E98C7E9-03A9-48DB-9189-4186DDFD66CC}"
+              DTS:DTSID="{C5EF0080-5508-4F96-89B1-7F27CC582F31}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="northing"
-              DTS:DTSID="{A6A607B0-25A4-47DE-BC99-A5F8F1800BC8}"
+              DTS:DTSID="{E0298473-E66B-4A24-9AD2-D8A42C82C801}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="14"
+              DTS:DataScale="6"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{80C491DF-31DB-4E73-98F8-A92B635ACF32}"
+              DTS:DTSID="{CC326D41-8F27-4DA7-B96A-1969B900B395}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="14"
+              DTS:DataScale="6"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{636F6562-617F-4F01-8E46-02615166420B}"
+              DTS:DTSID="{7C861029-9359-4E5A-9CDF-D6E9A739C3BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -84,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{3EE33DBA-3E55-4EF1-A1E3-06FCE5C661E9}"
+              DTS:DTSID="{34BD33F2-25EC-42A5-9E0B-68E865250443}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -93,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county"
-              DTS:DTSID="{37FF8866-D963-4700-ACA2-712F5D6BFE2B}"
+              DTS:DTSID="{54AF6070-9DA1-4C2E-91C2-31A0F370A92E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -102,7 +100,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_code"
-              DTS:DTSID="{BAEF49A5-4653-4BF9-B7FF-4A024ABD1DD1}"
+              DTS:DTSID="{96B8997B-0D38-4B08-A62B-86439F612129}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -111,7 +109,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="country_name"
-              DTS:DTSID="{1E98CCEB-4E77-4C06-BB44-EE891AB8ACE7}"
+              DTS:DTSID="{AF0C6A39-8C51-4395-A641-C6210E8FFED6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +118,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="iso3166-2"
-              DTS:DTSID="{2BB4C7CA-B5E6-4019-8534-EF0CBDDA060D}"
+              DTS:DTSID="{587B2D6B-699C-40BE-9F41-9EFFC8E9E9FD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +127,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_code"
-              DTS:DTSID="{38E87AB4-724C-4D6E-9F71-598183976447}"
+              DTS:DTSID="{F555C18C-846A-4B41-8BE3-9E0B183F1D5F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -138,7 +136,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region_name"
-              DTS:DTSID="{038DEBCF-96EB-4928-A3D0-8FA22D457668}"
+              DTS:DTSID="{CF53355B-EFF0-493F-BEB4-0C1ACD7AF629}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -323,12 +321,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[easting]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[easting]"
-                      length="50"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[easting]"
                       name="easting"
                       truncationRowDisposition="FailComponent">
@@ -345,12 +341,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[northing]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[northing]"
-                      length="50"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[northing]"
                       name="northing"
                       truncationRowDisposition="FailComponent">
@@ -367,14 +361,13 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[latitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="decimal"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
-                      length="50"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[latitude]"
                       name="latitude"
+                      scale="6"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -389,14 +382,13 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[longitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="decimal"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
-                      length="50"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[longitude]"
                       name="longitude"
+                      scale="6"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -498,28 +490,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[iso3166-2]"
-                      length="50"
-                      lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[iso3166-2]"
-                      name="iso3166-2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[region_code]"
                       codePage="1252"
                       dataType="str"
@@ -574,28 +544,22 @@
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="latitude" />
+                      dataType="decimal"
+                      name="latitude"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="longitude" />
+                      dataType="decimal"
+                      name="longitude"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[city]"
                       codePage="1252"
@@ -751,34 +715,28 @@
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[postcode]" />
                     <inputColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[easting]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="easting"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[easting]" />
                     <inputColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[northing]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="northing"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[northing]" />
                     <inputColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[latitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="decimal"
                       cachedName="latitude"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[latitude]" />
                     <inputColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[longitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="decimal"
                       cachedName="longitude"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[longitude]" />
                     <inputColumn
@@ -813,14 +771,6 @@
                       cachedName="country_name"
                       externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[country_name]" />
-                    <inputColumn
-                      refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[iso3166-2]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="iso3166-2"
-                      externalMetadataColumnId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
-                      lineageId="Package\Load Postcodes -&gt; Source\Flat File Source.Outputs[Flat File Source Output].Columns[iso3166-2]" />
                     <inputColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].Columns[region_code]"
                       cachedCodepage="1252"
@@ -860,28 +810,24 @@
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="latitude" />
+                      dataType="numeric"
+                      name="latitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="longitude" />
+                      dataType="numeric"
+                      name="longitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
@@ -906,12 +852,6 @@
                       dataType="str"
                       length="50"
                       name="country_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="iso3166-2" />
                     <externalMetadataColumn
                       refId="Package\Load Postcodes -&gt; Source\Postcodes_Source.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
                       codePage="1252"
@@ -1002,20 +942,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158,42"
-          Id="Package\Load Postcodes -&gt; Source\Derived Column"
-          TopLeft="279,125" />
-        <NodeLayout
           Size="170.666666666667,42"
           Id="Package\Load Postcodes -&gt; Source\Postcodes_Source"
           TopLeft="270,207" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load Postcodes -&gt; Source\Derived Column"
+          TopLeft="279,125" />
         <NodeLayout
           Size="156,42"
           Id="Package\Load Postcodes -&gt; Source\Flat File Source"
           TopLeft="281,43" />
         <EdgeLayout
-          Id="Package\Load Postcodes -&gt; Source.Paths[Flat File Source Output]"
-          TopLeft="358.5,85">
+          Id="Package\Load Postcodes -&gt; Source.Paths[Derived Column Output]"
+          TopLeft="356.75,167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1036,8 +976,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Postcodes -&gt; Source.Paths[Derived Column Output]"
-          TopLeft="356.75,167">
+          Id="Package\Load Postcodes -&gt; Source.Paths[Flat File Source Output]"
+          TopLeft="358.5,85">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"

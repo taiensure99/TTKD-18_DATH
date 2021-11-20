@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadSourcePostcodesToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{218E4F01-3100-4816-9D61-02AE43806300}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{A1C848F9-DF5E-4B9E-BF29-8A7830599DE9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -187,47 +187,43 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[easting]"
-                      length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]"
                       name="easting"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[northing]"
-                      length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]"
                       name="northing"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
-                      length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]"
                       name="latitude"
+                      precision="8"
+                      scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
-                      length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]"
                       name="longitude"
+                      precision="8"
+                      scale="6"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[city]"
@@ -272,17 +268,6 @@
                       length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_name]"
                       name="country_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[iso3166-2]"
-                      length="50"
-                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]"
-                      name="iso3166-2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[region_code]"
@@ -335,28 +320,24 @@
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="latitude" />
+                      dataType="numeric"
+                      name="latitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="longitude" />
+                      dataType="numeric"
+                      name="longitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
                       codePage="1252"
@@ -381,12 +362,6 @@
                       dataType="str"
                       length="50"
                       name="country_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="iso3166-2" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].ExternalColumns[region_code]"
                       codePage="1252"
@@ -423,32 +398,28 @@
                       name="postcode" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[easting]"
                       name="easting" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[northing]"
                       name="northing" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[latitude]"
-                      name="latitude" />
+                      name="latitude"
+                      precision="8"
+                      scale="6" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[longitude]"
-                      name="longitude" />
+                      name="longitude"
+                      precision="8"
+                      scale="6" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[city]"
                       codePage="1252"
@@ -477,13 +448,6 @@
                       length="50"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[country_name]"
                       name="country_name" />
-                    <outputColumn
-                      refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[iso3166-2]"
-                      name="iso3166-2" />
                     <outputColumn
                       refId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Error Output].Columns[region_code]"
                       codePage="1252"
@@ -607,34 +571,30 @@
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[postcode]" />
                     <inputColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[easting]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="easting"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[easting]" />
                     <inputColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[northing]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="northing"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[northing]" />
                     <inputColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[latitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="latitude"
+                      cachedPrecision="8"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[latitude]" />
                     <inputColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[longitude]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="longitude"
+                      cachedPrecision="8"
+                      cachedScale="6"
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[longitude]" />
                     <inputColumn
@@ -670,14 +630,6 @@
                       externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[country_name]" />
                     <inputColumn
-                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[iso3166-2]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="iso3166-2"
-                      externalMetadataColumnId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
-                      lineageId="Package\Load Postcode_source to Stage\Postcode Source.Outputs[OLE DB Source Output].Columns[iso3166-2]" />
-                    <inputColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].Columns[region_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -704,28 +656,24 @@
                       name="postcode" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[easting]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="easting" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[northing]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="northing" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[latitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="latitude" />
+                      dataType="numeric"
+                      name="latitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[longitude]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="longitude" />
+                      dataType="numeric"
+                      name="longitude"
+                      precision="8"
+                      scale="6" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
@@ -750,12 +698,6 @@
                       dataType="str"
                       length="50"
                       name="country_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[iso3166-2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="iso3166-2" />
                     <externalMetadataColumn
                       refId="Package\Load Postcode_source to Stage\Postcodes_Stage.Inputs[OLE DB Destination Input].ExternalColumns[region_code]"
                       codePage="1252"
@@ -913,13 +855,25 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="126.666666666667,42.6666666666667"
+          Id="Package\Get LSET"
+          TopLeft="181.874997289852,171.736845337783" />
+        <NodeLayout
           Size="230.666666666667,42.6666666666667"
-          Id="Package\truncate table Postcodes_Stage"
-          TopLeft="123.124998165295,25.3157899501912" />
+          Id="Package\Load Postcode_source to Stage"
+          TopLeft="133.124998016283,250.070179405195" />
         <NodeLayout
           Size="120,42.6666666666667"
           Id="Package\Set CET"
           TopLeft="180.624997308478,99.8947387223759" />
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Set LSET"
+          TopLeft="178.749997336417,326.000003915084" />
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\truncate table Postcodes_Stage"
+          TopLeft="123.124998165295,25.3157899501912" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="239.541664403553,67.9824566168578">
@@ -942,10 +896,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="126.666666666667,42.6666666666667"
-          Id="Package\Get LSET"
-          TopLeft="181.874997289852,171.736845337783" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="242.916663965831,142.561405389043">
@@ -968,10 +918,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="230.666666666667,42.6666666666667"
-          Id="Package\Load Postcode_source to Stage"
-          TopLeft="133.124998016283,250.070179405195" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="246.833330986401,214.40351200445">
@@ -994,10 +940,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="125.333333333334,42.6666666666667"
-          Id="Package\Set LSET"
-          TopLeft="178.749997336417,326.000003915084" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="244.93749767635,292.736846071861">
