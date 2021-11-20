@@ -11,8 +11,8 @@
   DTS:LocaleID="1066"
   DTS:ObjectName="LoadStageAccidentToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{0796D460-84BA-4C15-8D99-41016613E885}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{D4B46AA4-3C13-45A9-A530-7497674469C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1815,7 +1815,7 @@ where [refTable].[lsoa11cd] = ?</property>
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Load Accident To NDS"
-          TopLeft="171.527775221815,60.0584806626157" />
+          TopLeft="142.152775659537,84.6900600736125" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
